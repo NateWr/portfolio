@@ -1,0 +1,17 @@
+.spacer {
+    position: relative;
+    margin: 15vh auto;
+    width: 0;
+    height: 100vh;
+    left: 0.25rem;
+    transform: translateX(-50%);
+    border-left: var(--border-dotted);
+}
+
+@media (min-width: 1280px) {
+
+    .spacer {
+        margin-top: 12rem;
+        margin-bottom: 12rem;
+    }
+}

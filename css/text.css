@@ -1,0 +1,86 @@
+.text {
+    font-size: 5vw;
+    line-height: 2em;
+}
+
+.text-lg {
+    font-size: 6vw;
+    line-height: 2em;
+}
+
+.text-heading {
+    font-size: 7.5vw;
+    line-height: 1em;
+}
+
+/**
+ * Weird gap between phones and tablets
+ */
+@media (min-width: 564px) {
+
+    .text {
+        font-size: var(--text-sm);
+    }
+
+    .text-lg {
+        font-size: var(--text);
+    }
+
+    .text-heading {
+        font-size: var(--heading-sm);
+    }
+}
+
+/**
+ * Tablets (small)
+ */
+@media (min-width: 720px) {
+
+    .text {
+        font-size: var(--text);
+    }
+
+    .text-lg {
+        font-size: var(--text-md);
+    }
+
+    .text-heading {
+        font-size: var(--heading);
+    }
+}
+
+/**
+ * Tablets (large) and small desktops
+ */
+@media (min-width: 1024px) {
+
+    .text {
+        font-size: var(--text-md);
+    }
+
+    .text-lg {
+        font-size: var(--text-lg);
+    }
+
+    .text-heading {
+        font-size: var(--heading-lg);
+    }
+}
+
+/**
+ * Large desktops
+ */
+@media (min-width: 1600px) {
+
+    .text {
+        font-size: var(--text-lg);
+    }
+
+    .text-lg {
+        font-size: var(--text-xl);
+    }
+
+    .text-heading {
+        font-size: var(--heading-xl);
+    }
+}

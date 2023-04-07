@@ -1,0 +1,125 @@
+.portfolio-item {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 12em;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.portfolio-item-details {
+
+    & h2 {
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+    }
+}
+
+.portfolio-item-actions {
+    margin-top: 2em;
+
+    & .button {
+        width: 100%;
+    }
+}
+
+.portfolio-item-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: -8px -8px 0 var(--color-drop-highlight), 8px 8px 0 var(--color-drop-shadow);
+}
+
+/**
+ * Override .block widths for off-screen
+ * layout effect
+ */
+@media (min-width: 720px) and (max-width: 1280px) {
+
+    .portfolio {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        padding-inline-start: 5vw;
+        padding-inline-end: 5vw;
+    }
+}
+
+@media (min-width: 720px) {
+
+    .portfolio-item-image {
+        position: absolute;
+        top: 0;
+        right: 548px;
+        width: 400px;
+        height: 300px;
+    }
+
+    .portfolio-item {
+        flex-direction: row-reverse;
+        position: relative;
+
+        &:nth-child(even) {
+            flex-direction: row;
+
+            & .portfolio-item-image {
+                right: auto;
+                left: 548px;
+            }
+        }
+    }
+
+    .portfolio-item-details {
+        max-width: 500px;
+
+        & h2 {
+            margin-top: 0;
+        }
+    }
+
+    .portfolio-item-actions {
+
+        & .button {
+            width: auto;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .portfolio-item {
+        justify-content: space-between;
+        gap: 3rem;
+        margin-bottom: 16rem;
+
+        &:nth-child(even) {
+
+            & .portfolio-item-image {
+                left: auto;
+            }
+        }
+    }
+
+    .portfolio-item-details {
+        max-width: none;
+    }
+
+    .portfolio-item-image {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 400px;
+        height: auto;
+        flex-shrink: 0;
+    }
+}
+
+
+@media (min-width: 1600px) {
+
+    .portfolio-item-image {
+        width: 600px;
+    }
+}

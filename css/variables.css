@@ -1,0 +1,72 @@
+:root {
+    /**
+     * Palette
+     */
+    --color-black-85: rgba(0, 0, 0, 0.85);
+    --color-blue: #3DADFF;
+    --color-dark-brown: #27241E;
+    --color-white: #fff;
+    --color-yellow: #FFC46B;
+    --color-yellow-lighter: #FFD08A;
+
+    /**
+     * Light mode
+     */
+    --color-bg: var(--color-white);
+    --color-text: var(--color-black-85);
+    --color-focus: var(--color-blue);
+    --color-link: var(--color-black-85);
+    --color-link-highlight: var(--color-yellow);
+    --color-button: var(--color-black-85);
+    --color-button-bg: var(--color-yellow);
+    --color-button-bg-hover: linear-gradient(to right top, var(--color-yellow), var(--color-yellow-lighter));
+    --color-button-bg-active: linear-gradient(to right bottom, var(--color-yellow), var(--color-yellow-lighter));
+    --color-drop-highlight: var(--color-yellow);
+    --color-drop-shadow: var(--color-black-85);
+    --color-svg-icon: #000;
+    --color-svg-icon-opacity: 0.85;
+
+    /**
+     * Typography
+     */
+    --font-family: 'Work Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --text-normal: 400;
+    --text-medium: 500;
+    --text-semibold: 600;
+    --text-bold: 700;
+
+    --text-sm: 1.25rem; /* 20 */
+    --text: 1.5rem; /* 24 */
+    --text-md: 1.625rem; /* 26 */
+    --text-lg: 2rem; /* 32 */
+    --text-xl: 3rem; /* 48 */
+
+    --heading-sm: 1.5rem; /* 24 */
+    --heading: 2.125rem; /* 34 */
+    --heading-lg: 2.25rem; /* 36 */
+    --heading-xl: 3rem; /* 48 */
+
+    --title-xs: 3rem; /* 48 */
+
+    /**
+     * The rest
+     */
+    --radius: 2px;
+    --border-dotted: 0.5rem dotted var(--color-yellow);
+
+}
+
+/**
+ * Dark mode
+ */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: var(--color-dark-brown);
+        --color-text: var(--color-yellow);
+        --color-link: var(--color-yellow);
+        --color-link-highlight: var(--color-focus);
+        --color-svg-icon: var(--color-yellow);
+        --color-svg-icon-opacity: 1;
+    }
+}

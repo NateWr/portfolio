@@ -1,0 +1,88 @@
+.site-footer {
+    margin-top: 15vh;
+
+    /* Override mysterious gap at bottom of viewport */
+    margin-bottom: -1vh;
+
+    /* Above the background image */
+    z-index: 1;
+    padding-bottom: 80vw;
+
+    & h2 {
+        margin-bottom: 0.5em;
+    }
+}
+
+.site-footer-avatar {
+    display: none;
+}
+
+.site-footer-links {
+    margin-top: 10vw;
+    font-size: 4vw;
+    line-height: 1.5em;
+}
+
+.site-footer-link {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 1.5em 0;
+
+    & svg {
+        fill: var(--color-svg-icon);
+        opacity: var(--color-svg-icon-opacity);
+        width: 2em;
+        height: 2em;
+    }
+
+    & a {
+        font-weight: var(--text-semibold);
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus-visible {
+            text-decoration: underline;
+            text-decoration-thickness: 0.15em;
+        }
+
+        &:focus-visible {
+            outline: none;
+            text-decoration-color: var(--color-focus);
+        }
+
+        &:active {
+            color: var(--color-link-highlight);
+            text-decoration-color: var(--color-link-highlight);
+        }
+    }
+}
+
+.footer-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: auto;
+}
+
+/**
+ * Tablets (small)
+ */
+@media (min-width: 720px) {
+
+    .site-footer {
+        padding-bottom: 50vw;
+    }
+
+    .site-footer-links {
+        margin-top: 2em;
+        font-size: var(--text);
+    }
+
+    .footer-image {
+        width: 65vw;
+    }
+
+}

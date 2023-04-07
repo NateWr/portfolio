@@ -1,0 +1,92 @@
+.block,
+.block-narrow {
+    position: relative;
+    margin-inline-start: 5vw;
+    margin-inline-end: 5vw;
+}
+
+/**
+ * Weird gap between phones and tablets
+ */
+@media (min-width: 564px) {
+
+    .block,
+    .block-narrow {
+        max-width: 500px;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
+}
+
+/**
+ * Tablets (small)
+ */
+@media (min-width: 720px) {
+
+    .block,
+    .block-narrow {
+        max-width: 640px;
+    }
+}
+
+/**
+ * Tablets (large) and small laptops
+ */
+@media (min-width: 1024px) {
+
+    .block {
+        max-width: 760px;
+    }
+
+    .block-narrow {
+        max-width: 676px;
+    }
+}
+
+/**
+ * Laptops
+ */
+@media (min-width: 1280px) {
+
+    .block {
+        max-width: 992px;
+    }
+}
+
+/**
+ * Desktops and large laptops
+ */
+@media (min-width: 1400px) {
+
+    .block {
+        max-width: 1024px;
+    }
+}
+
+/**
+ * Large Desktops
+ */
+@media (min-width: 1600px) {
+
+    .block {
+        max-width: 1400px;
+    }
+
+    .block-narrow {
+        max-width: 760px;
+    }
+}
+
+/**
+ * Very Large Desktops
+ */
+@media (min-width: 1920px) {
+
+    .block {
+        max-width: 1600px;
+    }
+
+    .block-narrow {
+        max-width: 866px;
+    }
+}

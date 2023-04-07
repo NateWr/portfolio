@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ title }}</title>
+        {% if description %}
+            <meta name="description" content="{{ description }}">
+        {% endif %}
+    </head>
+    <body class="{% if page.url == '/' %}home{% else %}page{% endif %}">
+        {% backgroundImage "/img/header" "header-image" "Photo of me squinting into the camera" "eager" %}
+        {% if page.url != '/' %}
+            <header class="site-header">
+                <a class="block back-link" href="/">
+                    Back to home
+                </a>
+            </header>
+        {% endif %}
+        <main>
+            {{ content }}
+        </main>
+        <footer class="block-narrow site-footer">
+            <h2 class="text-heading">Contact Me</h2>
+            <div class="text">
+                Get in touch if you think I can help you with something.
+            </div>
+            <div class="site-footer-details">
+                {% assign widths = "120,240" | split: "," %}
+                {% image "img/avatar.jpg", "My avatar", "site-footer-avatar", "lazy", widths, "120px" %}
+                <ul class="site-footer-links unstyled-list">
+                    <li class="site-footer-link">
+                        {% include 'icon-github.svg' %}
+                        <a href="https://github.com/NateWr">
+                            github.com/NateWr
+                        </a>
+                    </li>
+                    <li class="site-footer-link">
+                        {% include 'icon-email.svg' %}
+                        <a href="mailto:natew+work@notthisway.com">
+                            natew+work@notthisway.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        {% backgroundImage "/img/footer" "footer-image" "Photo of my dog Peanut" "lazy" %}
+    </body>
+</html>

@@ -1,0 +1,76 @@
+---
+layout: layout.html
+title: Nate Wright — Senior Full-stack Developer
+description: I have more than a decade of experience building open source tools for the web. Come see a little of what I've done.
+---
+<article>
+    <h1 class="hello">
+        <span class="hello-small">
+            Hello, my name is
+        </span>
+        Nate Wright
+    </h1>
+    <p class="block-narrow text">
+        and I have more than a decade of experience building open source
+        tools for the web. I’m comfortable working across the full stack,
+        whether I’m creating a <a href="ui-component-library">UI component
+        library</a>, refactoring a <a href="#">legacy code base</a>, or
+        building a <a href="#">data-driven app</a>. In my career, I’ve worn
+        all sorts of hats. I’ve worked alone and in teams, led on frontend
+        and backend tasks, and taken on <a href="#">documentation and
+        developer relations</a>.
+    </p>
+    <p class="block-narrow text">
+        I had a previous career in journalism and I’m interested in working
+        on projects at the intersection of information, communication, and
+        social change. I believe <a href="#">technology is a means not a
+        mission</a>. No algorithm can tell us what a better world looks like.
+        But well-built digital products can help watchdogs monitor,
+        campaigners organise, and activists agitate.
+    </p>
+    <p class="block-narrow text">
+        You can learn more about some of the work I've done below.
+        <a href="#">Contact me</a> if you think I can help with something you are
+        working on.
+    </p>
+    <div class="spacer" aria-hidden="true"></div>
+    <ul class="block unstyled-list portfolio">
+        <li class="portfolio-item">
+            <div class="portfolio-item-details">
+                <h2 class="text-heading">UI Component Library</h2>
+                <div class="text">
+                    I built a Vue.js component library for the
+                    world's most widely used scholarly publishing software.
+                </div>
+                <div class="portfolio-item-actions">
+                    <a href="#" class="button">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            {% assign widths = "416,832,600" | split: "," %}
+            {% assign sizes = "(min-width:1280px) 600px,(min-width: 720px) 416px,85vw" | split: "," %}
+            {% image "img/ui-library.png", "Screenshot of PKP's UI Library", "portfolio-item-image", "lazy", widths, sizes %}
+        </li>
+        <li class="portfolio-item">
+            <div class="portfolio-item-details">
+                <h2 class="text-heading">Find your representatives</h2>
+                <div class="text">
+                    I gathered data on my city councillors and turned it into a
+                    simple app that is easy to use on any device. I used Cypress,
+                    Node.js and Vue.js.
+                </div>
+                <div class="portfolio-item-actions">
+                    <a href="#" class="button">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            {% assign widths = "416,832,600" | split: "," %}
+            {% assign sizes = "(min-width:1280px) 600px,(min-width: 720px) 416px,85vw" | split: "," %}
+            {% image "img/find-your-councillor.png", "Screenshot of the app to find your Edinburgh city councillor", "portfolio-item-image", "lazy", widths, sizes %}
+        </li>
+    </ul>
+    <div class="spacer" aria-hidden="true"></div>
+</article>
+

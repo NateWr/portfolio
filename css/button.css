@@ -1,0 +1,51 @@
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 0.75em 1em;
+    font-size: 5vw;
+    text-align: center;
+    color: var(--color-button);
+    background-color: var(--color-button-bg);
+    box-shadow: 8px 8px 0 var(--color-drop-shadow);
+    text-decoration: none;
+    border: 0.15em solid transparent;
+    border-radius: var(--radius);
+
+    &:hover {
+        text-decoration: none;
+        background-image: var(--color-button-bg-hover);
+    }
+
+    &:active {
+        color: var(--color-button);
+        background-image: var(--color-button-bg-active);
+        top: 2px;
+        right: -2px;
+        box-shadow: 6px 6px 0 var(--color-drop-shadow);
+    }
+
+    &:focus-visible {
+        border-color: var(--color-drop-shadow);
+        outline: 0.175em solid var(--color-focus);
+    }
+}
+
+/**
+ * Weird gap between phones and tablets
+ */
+@media (min-width: 564px) {
+
+    .button {
+        font-size: var(--text);
+    }
+}
+
+/**
+ * Very large desktops
+ */
+@media (min-width: 1600px) {
+
+    .button {
+        font-size: var(--text-lg);
+    }
+}

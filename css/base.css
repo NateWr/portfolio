@@ -1,0 +1,40 @@
+html,
+body {
+    position: relative;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+a {
+    color: var(--color-link);
+    font-weight: var(--text-bold);
+    text-decoration-thickness: 0.15em;
+
+    &:hover {
+        text-decoration-color: var(--color-link-highlight);
+    }
+
+    &:focus-visible {
+        text-decoration-color: var(--color-focus);
+        outline: none;
+    }
+
+    &:active {
+        color: var(--color-link-highlight);
+    }
+}
+
+p {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.unstyled-list {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-inline-start: 0;
+    list-style: none;
+}
