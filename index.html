@@ -35,6 +35,8 @@ description: I have more than a decade of experience building open source tools 
     </p>
     <div class="spacer" aria-hidden="true"></div>
     <ul class="block unstyled-list portfolio">
+        {% assign widths = "416,832,600" | split: "," %}
+        {% assign sizes = "(min-width:1280px) 600px,(min-width: 720px) 416px,85vw" | split: "," %}
         <li class="portfolio-item">
             <div class="portfolio-item-details">
                 <h2 class="text-heading">UI Component Library</h2>
@@ -48,8 +50,6 @@ description: I have more than a decade of experience building open source tools 
                     </a>
                 </div>
             </div>
-            {% assign widths = "416,832,600" | split: "," %}
-            {% assign sizes = "(min-width:1280px) 600px,(min-width: 720px) 416px,85vw" | split: "," %}
             {% image "img/ui-library.png", "Screenshot of PKP's UI Library", "portfolio-item-image", "lazy", widths, sizes %}
         </li>
         <li class="portfolio-item">
@@ -66,9 +66,37 @@ description: I have more than a decade of experience building open source tools 
                     </a>
                 </div>
             </div>
-            {% assign widths = "416,832,600" | split: "," %}
-            {% assign sizes = "(min-width:1280px) 600px,(min-width: 720px) 416px,85vw" | split: "," %}
             {% image "img/find-your-councillor.png", "Screenshot of the app to find your Edinburgh city councillor", "portfolio-item-image", "lazy", widths, sizes %}
+        </li>
+        <li class="portfolio-item">
+            <div class="portfolio-item-details">
+                <h2 class="text-heading">Code Modernization</h2>
+                <div class="text">
+                    I helped refactor and modernize a legacy PHP/jQuery application
+                    with type hints, automatic code formatting, a REST API, and Vue.js.
+                </div>
+                <div class="portfolio-item-actions">
+                    <a href="#" class="button">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            {% image "img/code-format.png", "Screenshot of the commit diff with automatic formatting", "portfolio-item-image", "lazy", widths, sizes %}
+        </li>
+        <li class="portfolio-item">
+            <div class="portfolio-item-details">
+                <h2 class="text-heading">Documentation</h2>
+                <div class="text">
+                    I handled developer relations for an open source project, writing
+                    documentation, a contributor's guide, and a newsletter.
+                </div>
+                <div class="portfolio-item-actions">
+                    <a href="#" class="button">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            {% image "img/api-docs.png", "Screenshot of the REST API documentation for OJS", "portfolio-item-image", "lazy", widths, sizes %}
         </li>
     </ul>
     <div class="spacer" aria-hidden="true"></div>
