@@ -82,10 +82,6 @@
  */
 @media (min-width: 1920px) {
 
-    .block {
-        max-width: 1600px;
-    }
-
     .block-narrow {
         max-width: 866px;
     }
