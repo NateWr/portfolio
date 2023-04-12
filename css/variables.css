@@ -53,6 +53,18 @@
     --title-xs: 3rem; /* 48 */
 
     /**
+     * Responsive breakpoints
+     */
+    @custom-media --large-phones (min-width: 564px);
+    @custom-media --tablets-sm (min-width: 720px);
+    @custom-media --tablets (min-width: 834px);
+    @custom-media --tablets-landscape (min-width: 1024px);
+    @custom-media --laptops-sm (min-width: 1280px);
+    @custom-media --laptops (min-width: 1400px);
+    @custom-media --laptops-lg (min-width: 1600px);
+    @custom-media --laptops-xl (min-width: 1920px);
+
+    /**
      * The rest
      */
     --radius: 2px;
@@ -61,9 +73,6 @@
     --inset-bg: linear-gradient(to top right, var(--color-inset-gradient-start), var(--color-inset-gradient-end));
 }
 
-/**
- * Dark mode
- */
 @media (prefers-color-scheme: dark) {
     :root {
         --color-bg: var(--color-dark-brown);

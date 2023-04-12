@@ -24,10 +24,7 @@
     display: none;
 }
 
-/**
- * Tablets (large) and small desktops
- */
-@media (min-width: 1024px) {
+@media (--tablets-landscape) {
 
     .page-nav-touch {
         position: absolute;
@@ -59,10 +56,7 @@
     }
 }
 
-/**
- * Desktops and large laptops
- */
-@media (min-width: 1400px) {
+@media (--laptops) {
 
     .page-nav-desktop {
 

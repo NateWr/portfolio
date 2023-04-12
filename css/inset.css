@@ -7,20 +7,14 @@
     background: var(--inset-bg);
 }
 
-/**
- * Weird gap between phones and tablets
- */
-@media (min-width: 564px) {
+@media(--large-phones) {
 
     .inset {
         padding: 2em;
     }
 }
 
-/**
- * Tablets (large) and small laptops
- */
-@media (min-width: 1024px) {
+@media (--tablets-landscape) {
 
     .inset {
         /* Keep text column at .block-narrow width */
@@ -28,10 +22,7 @@
     }
 }
 
-/**
- * Laptops
- */
- @media (min-width: 1280px) {
+@media (--laptops-sm) {
 
     .inset {
         padding: 4rem;
@@ -45,10 +36,7 @@
     }
 }
 
-/**
- * Desktops and large laptops
- */
-@media (min-width: 1400px) {
+@media (--laptops) {
 
     .inset {
 
@@ -61,10 +49,7 @@
     }
 }
 
-/**
- * Large Desktops
- */
-@media (min-width: 1600px) {
+@media (--laptops-lg) {
 
     .inset {
         max-width: 1200px;
@@ -78,10 +63,7 @@
     }
 }
 
-/**
- * Very Large Desktops
- */
-@media (min-width: 1920px) {
+@media (--laptops-xl) {
 
     .inset {
 

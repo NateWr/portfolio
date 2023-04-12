@@ -22,10 +22,7 @@
     }
 }
 
-/**
- * Weird gap between phones and tablets
- */
-@media (min-width: 564px) {
+@media(--large-phones) {
 
     .text {
         font-size: var(--text-sm);
@@ -40,10 +37,7 @@
     }
 }
 
-/**
- * Tablets (small)
- */
-@media (min-width: 720px) {
+@media(--tablets-sm) {
 
     .text {
         font-size: var(--text);
@@ -58,10 +52,7 @@
     }
 }
 
-/**
- * Tablets (large) and small desktops
- */
-@media (min-width: 1024px) {
+@media (--tablets-landscape) {
 
     .text {
         font-size: var(--text-md);
@@ -76,10 +67,7 @@
     }
 }
 
-/**
- * Large desktops
- */
-@media (min-width: 1600px) {
+@media (--laptops-lg) {
 
     .text {
         font-size: var(--text-lg);

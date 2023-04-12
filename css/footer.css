@@ -45,10 +45,7 @@
     height: auto;
 }
 
-/**
- * Tablets (small)
- */
-@media (min-width: 720px) {
+@media(--tablets-sm) {
 
     .site-footer {
         padding-bottom: 50vw;

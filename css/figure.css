@@ -25,10 +25,7 @@
     }
 }
 
-/**
- * Tablets (small)
- */
-@media (min-width: 720px) {
+@media(--tablets-sm) {
 
     .figure {
 
@@ -38,10 +35,7 @@
     }
 }
 
-/**
- * Large Desktops
- */
-@media (min-width: 1600px) {
+@media (--laptops-lg) {
 
     .figure figcaption {
         font-size: var(--text);

@@ -22,7 +22,7 @@
 }
 
 /**
- * Very small screens
+ * Adjust text once passed very small screens
  */
 @media (min-width: 290px) {
     .hello {
@@ -30,10 +30,7 @@
     }
 }
 
-/**
- * Tablets (small)
- */
-@media (min-width: 720px) {
+@media(--tablets-sm) {
 
     .hello {
         padding-top: 35vw;
@@ -46,10 +43,7 @@
     }
 }
 
-/**
- * Tablets (small)
- */
-@media (min-width: 834px) {
+@media (--tablets) {
 
     .hello {
         width: 6.5em;
@@ -65,10 +59,7 @@
     }
 }
 
-/**
- * Tablets (large) and small desktops
- */
-@media (min-width: 1024px) {
+@media (--tablets-landscape) {
 
     .hello {
         font-size: 8rem;
@@ -79,10 +70,7 @@
     }
 }
 
-/**
- * Desktops
- */
-@media (min-width: 1280px) {
+@media (--laptops-sm) {
 
     .hello {
         padding-top: 28vw;
@@ -94,10 +82,7 @@
     }
 }
 
-/**
- * Large desktops
- */
-@media (min-width: 1600px) {
+@media (--laptops-lg) {
 
     .hello {
         font-size: 12rem;
@@ -108,10 +93,7 @@
     }
 }
 
-/**
- * Very Large Desktops
- */
-@media (min-width: 1920px) {
+@media (--laptops-xl) {
 
     .hello {
         font-size: 14rem;

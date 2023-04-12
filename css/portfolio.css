@@ -34,8 +34,10 @@
 /**
  * Override .block widths for off-screen
  * layout effect
+ *
+ * @uses --laptops-sm
  */
-@media (min-width: 720px) and (max-width: 1280px) {
+@media (--tablets-sm) and (max-width: 1280px) {
 
     .portfolio {
         width: 100vw;
@@ -47,7 +49,7 @@
     }
 }
 
-@media (min-width: 720px) {
+@media (--tablets-sm) {
 
     .portfolio-item-image {
         position: absolute;
@@ -87,7 +89,7 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (--tablets-landscape) {
 
     .portfolio-item {
         justify-content: space-between;
@@ -117,7 +119,7 @@
 }
 
 
-@media (min-width: 1600px) {
+@media (--laptops-lg) {
 
     .portfolio-item-image {
         width: 600px;

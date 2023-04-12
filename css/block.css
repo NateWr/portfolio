@@ -5,10 +5,7 @@
     margin-inline-end: 5vw;
 }
 
-/**
- * Weird gap between phones and tablets
- */
-@media (min-width: 564px) {
+@media(--large-phones) {
 
     .block,
     .block-narrow {
@@ -18,10 +15,7 @@
     }
 }
 
-/**
- * Tablets (small)
- */
-@media (min-width: 720px) {
+@media(--tablets-sm) {
 
     .block,
     .block-narrow {
@@ -29,10 +23,7 @@
     }
 }
 
-/**
- * Tablets (large) and small laptops
- */
-@media (min-width: 1024px) {
+@media (--tablets-landscape) {
 
     .block {
         max-width: 760px;
@@ -43,30 +34,21 @@
     }
 }
 
-/**
- * Laptops
- */
-@media (min-width: 1280px) {
+@media (--laptops-sm) {
 
     .block {
         max-width: 992px;
     }
 }
 
-/**
- * Desktops and large laptops
- */
-@media (min-width: 1400px) {
+@media (--laptops) {
 
     .block {
         max-width: 1024px;
     }
 }
 
-/**
- * Large Desktops
- */
-@media (min-width: 1600px) {
+@media (--laptops-lg) {
 
     .block {
         max-width: 1200px;
@@ -77,10 +59,7 @@
     }
 }
 
-/**
- * Very Large Desktops
- */
-@media (min-width: 1920px) {
+@media (--laptops-xl) {
 
     .block {
         max-width: 1400px;

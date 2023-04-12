@@ -12,10 +12,7 @@
     height: 10rem;
 }
 
-/**
- * Laptops
- */
-@media (min-width: 1280px) {
+@media (--laptops-sm) {
 
     .spacer {
         margin-top: 12rem;

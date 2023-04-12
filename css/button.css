@@ -40,20 +40,14 @@
     }
 }
 
-/**
- * Weird gap between phones and tablets
- */
-@media (min-width: 564px) {
+@media(--large-phones) {
 
     .button {
         font-size: var(--text);
     }
 }
 
-/**
- * Very large desktops
- */
-@media (min-width: 1600px) {
+@media (--laptops-lg) {
 
     .button {
         font-size: var(--text-lg);
