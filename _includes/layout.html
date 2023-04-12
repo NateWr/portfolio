@@ -48,13 +48,36 @@
                 <div class="block page-nav-desktop" aria-hidden="true">
                     <a class="unlined-link" href="{{ backUrl }}">
                         {% include 'back-arrow-long.svg' %}
-                        {{ backText }}
+                        Back to home
                     </a>
                 </div>
             {% endif %}
         {% endif %}
         <main>
             {{ content }}
+
+            {% if page.url != '/' %}
+                <nav class="block page-nav-footer" aria-label="Go to next/last page">
+                    <ul class="unstyled-list">
+                        {% if backUrl %}
+                            <li>
+                                <a class="unlined-link" href="{{ backUrl }}">
+                                    {% include 'back-arrow-long.svg' %}
+                                    Back: {{ backText }}
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if nextUrl %}
+                            <li>
+                                <a class="unlined-link" href="{{ nextUrl }}">
+                                    Next: {{ nextText }}
+                                    {% include 'next-arrow-long.svg' %}
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
         </main>
         <footer class="block-narrow site-footer">
             <h2 class="text-heading">Contact Me</h2>

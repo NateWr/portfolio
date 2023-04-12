@@ -90,6 +90,10 @@
 
 @media (--laptops-xl) {
 
+    .page {
+        padding-top: 8rem;
+    }
+
     .page-title {
         font-size: 7.5rem;
     }
