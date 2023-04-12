@@ -10,7 +10,16 @@
 
 .text-heading {
     font-size: 7.5vw;
-    line-height: 1em;
+    line-height: 1.2em;
+    font-weight: var(--text-semibold);
+
+    & svg {
+        position: relative;
+        top: 0.2em;
+        width: auto;
+        height: 1em;
+        margin-right: 0.25em;
+    }
 }
 
 /**

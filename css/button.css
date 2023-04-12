@@ -1,8 +1,9 @@
 .button {
     position: relative;
     display: inline-block;
-    padding: 0.75em 1em;
+    padding: 0.25em 1em;
     font-size: 5vw;
+    line-height: 2em;
     text-align: center;
     color: var(--color-button);
     background-color: var(--color-button-bg);
@@ -27,6 +28,15 @@
     &:focus-visible {
         border-color: var(--color-drop-shadow);
         outline: 0.175em solid var(--color-focus);
+    }
+
+    & svg {
+        position: relative;
+        height: 1.5em;
+        width: auto;
+        vertical-align: middle;
+        top: -0.1em;
+        margin-inline-end: 0.25em;
     }
 }
 

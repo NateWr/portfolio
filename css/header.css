@@ -7,16 +7,6 @@
 }
 
 /**
- * Phones in landscape
- */
- @media (orientation: landscape) and (max-width: 1023px) {
-
-    .header-image {
-        width: 35vw;
-    }
-}
-
-/**
  * Tablets (small)
  */
  @media (min-width: 720px) {

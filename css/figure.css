@@ -1,0 +1,49 @@
+.figure {
+
+    & img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        box-shadow: var(--box-shadow-highlight);
+    }
+
+    & figcaption {
+        position: relative;
+        margin-top: 1.5em;
+        padding-left: 3em;
+        font-size: var(--text-xs);
+        line-height: 1.5em;
+        max-width: 35em;
+
+        & svg {
+            position: absolute;
+            top: 0.25em;
+            left: 0;
+            width: 2em;
+            height: auto;
+        }
+    }
+}
+
+/**
+ * Tablets (small)
+ */
+@media (min-width: 720px) {
+
+    .figure {
+
+        & figcaption {
+            font-size: var(--text-sm);
+        }
+    }
+}
+
+/**
+ * Large Desktops
+ */
+@media (min-width: 1600px) {
+
+    .figure figcaption {
+        font-size: var(--text);
+    }
+}

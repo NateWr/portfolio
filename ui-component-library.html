@@ -1,23 +1,49 @@
 ---
 layout: layout.html
 title: UI Component Library
+backUrl: "/"
+backText: "Back to home"
+nextUrl: "/find-your-councillor"
+nextText: "Next: Civic App"
 ---
 <article>
-    <div class="block">
-        <div class="page-type">
-            Portfolio
-        </div>
-        <h1 class="page-title">
-            Documentation and Developer Relations
-        </h1>
+    <div class="block page-type">
+        Portfolio
     </div>
+    <h1 class="block page-title">
+        UI Component Library
+    </h1>
+    <div class="block">
+        <div class="page-links-wrapper">
+            <ul class="page-links unstyled-list">
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/">
+                        {% include 'icon-desktop.svg' %}
+                        View Library
+                    </a>
+                </li>
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="https://github.com/pkp/ui-library/">
+                        {% include 'icon-github.svg' %}
+                        View Source
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="block text-heading">
+        {% include 'chevron-right.svg' %}
+        Summary
+    </h2>
     <p class="block text-lg">
         I have more than a decade of experience building open source
         tools for the web. I’m comfortable working across the full stack,
         whether I’m creating a UI component library, refactoring a legacy
-        code base, or building a data-driven app.
+        code base, or building a data-driven app. I’m comfortable working
+        across the full stack, whether I’m creating a UI component library.
     </p>
-    <p class="block text">
+    <div class="spacer spacer--small" aria-hidden="true"></div>
+    <p class="block-narrow text">
         I had a previous career in journalism and I’m interested in working
         on projects at the intersection of information, communication, and
         social change. I believe <a href="#">technology is a means not a
@@ -25,8 +51,77 @@ title: UI Component Library
         But well-built digital products can help watchdogs monitor,
         campaigners organise, and activists agitate.
     </p>
-    {% image "img/api-docs.png", "api-docs" %}
-    {% image "img/code-format.png", "code-format" %}
-    {% image "img/find-your-councillor.png", "find-your-councillor" %}
-    {% image "img/ui-library.png", "Example alt text" %}
+    <figure class="block figure">
+        {% image "img/ui-library.png", "Screenshot of the UI Library" %}
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            Lorem ipsum dolor sit amet and some more stuff that goes on for
+            a while and some more <a href="#">stuff</a> that goes on for a
+            while.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        I had a previous career in journalism and I’m interested in working
+        on projects at the intersection of information, communication, and
+        social change. I believe <a href="#">technology is a means not a
+        mission</a>. No algorithm can tell us what a better world looks like.
+        But well-built digital products can help watchdogs monitor,
+        campaigners organise, and activists agitate.
+    </p>
+    <div class="block inset">
+        <h2 class="text-heading">
+            Why didn't we use an existing component library, like Quasar or
+            Vuetify?
+        </h2>
+        <p class="text">
+            I had a previous career in journalism and I’m interested in working
+            on projects at the intersection of information, communication, and
+            social change. I believe <a href="#">technology is a means not a
+            mission</a>. No algorithm can tell us what a better world looks like.
+            But well-built digital products can help watchdogs monitor,
+            campaigners organise, and activists agitate.
+        </p>
+        <p class="text">
+            I believe no algorithm can tell us what a better world looks like.
+            But well-built digital products can help watchdogs monitor,
+            campaigners organise, and activists agitate.
+        </p>
+        <div class="inset-actions">
+            <a href="#" class="button">
+                {% include 'icon-github.svg' %}
+                View Source
+            </a>
+        </div>
+    </div>
+    <p class="block-narrow text">
+        I have more than a decade of experience building open source
+        tools for the web. I’m comfortable working across the full stack,
+        whether I’m creating a UI component library, refactoring a legacy
+        code base, or building a data-driven app.
+    </p>
+    <p class="block-narrow text">
+        I had a previous career in journalism and I’m interested in working
+        on projects at the intersection of information, communication, and
+        social change. I believe <a href="#">technology is a means not a
+        mission</a>. No algorithm can tell us what a better world looks like.
+        But well-built digital products can help watchdogs monitor,
+        campaigners organise, and activists agitate.
+    </p>
+    <h2 class="block-narrow text-heading">
+        Lorem ipsum dolor sit amet
+    </h2>
+    <p class="block-narrow text">
+        I have more than a decade of experience building open source
+        tools for the web. I’m comfortable working across the full stack,
+        whether I’m creating a UI component library, refactoring a legacy
+        code base, or building a data-driven app.
+    </p>
+    <p class="block-narrow text">
+        I had a previous career in journalism and I’m interested in working
+        on projects at the intersection of information, communication, and
+        social change. I believe <a href="#">technology is a means not a
+        mission</a>. No algorithm can tell us what a better world looks like.
+        But well-built digital products can help watchdogs monitor,
+        campaigners organise, and activists agitate.
+    </p>
 </article>

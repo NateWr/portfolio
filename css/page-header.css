@@ -1,0 +1,117 @@
+.page {
+    padding-top: 15vh;
+
+    .header-image {
+        opacity: 25%;
+    }
+}
+
+.page-type {
+    font-size: 6vw;
+    font-weight: var(--text-medium);
+    line-height: 1em;
+}
+
+.page-title {
+    font-size: 12vw;
+    font-weight: var(--text-bold);
+    line-height: 1.15em;
+    /* Correct left-align shift in font */
+    position: relative;
+    left: -0.05em;
+}
+
+/**
+ * Weird gap between phones and tablets
+ */
+@media (min-width: 564px) {
+
+    .page {
+        padding-top: 12rem;
+    }
+
+    .page-type {
+        font-size: 2rem;
+    }
+
+    .page-title {
+        font-size: 4rem;
+    }
+}
+
+/**
+ * Tablets (small)
+ */
+@media (min-width: 720px) {
+
+    .page-type {
+        font-size: 2rem;
+    }
+
+    .page-title {
+        font-size: 5rem;
+    }
+}
+
+/**
+ * Tablets (large) and small desktops
+ */
+@media (min-width: 1024px) {
+
+    .page {
+        padding-top: 2rem;
+    }
+
+    .page-type {
+        font-size: 2.5rem;
+    }
+
+    .page-title {
+        font-size: 6rem;
+        line-height: 1.05em;
+    }
+}
+
+/**
+ * Laptops
+ */
+@media (min-width: 1280px) {
+
+    .page-title {
+        font-size: 7.5rem;
+    }
+}
+
+/**
+ * Desktops and large laptops
+ */
+@media (min-width: 1400px) {
+
+    .page {
+        padding-top: 4rem;
+    }
+
+    .page-title {
+        font-size: 7.5rem;
+    }
+}
+
+/**
+ * Large Desktops
+ */
+@media (min-width: 1600px) {
+
+    .page-title {
+        font-size: 7.5rem;
+    }
+}
+
+/**
+ * Very Large Desktops
+ */
+@media (min-width: 1920px) {
+
+    .page-title {
+        font-size: 7.5rem;
+    }
+}

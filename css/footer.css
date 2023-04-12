@@ -35,28 +35,6 @@
         width: 2em;
         height: 2em;
     }
-
-    & a {
-        font-weight: var(--text-semibold);
-        text-decoration: none;
-
-        &:hover,
-        &:active,
-        &:focus-visible {
-            text-decoration: underline;
-            text-decoration-thickness: 0.15em;
-        }
-
-        &:focus-visible {
-            outline: none;
-            text-decoration-color: var(--color-focus);
-        }
-
-        &:active {
-            color: var(--color-link-highlight);
-            text-decoration-color: var(--color-link-highlight);
-        }
-    }
 }
 
 .footer-image {

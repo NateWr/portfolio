@@ -31,16 +31,6 @@
 }
 
 /**
- * Weird gap between phones and tablets
- */
-@media (min-width: 564px) {
-/*
-    .hello {
-        white-space: nowrap;
-    } */
-}
-
-/**
  * Tablets (small)
  */
 @media (min-width: 720px) {

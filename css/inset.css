@@ -1,0 +1,95 @@
+.inset {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    padding: 5vw;
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow-highlight);
+    background: var(--inset-bg);
+}
+
+/**
+ * Weird gap between phones and tablets
+ */
+@media (min-width: 564px) {
+
+    .inset {
+        padding: 2em;
+    }
+}
+
+/**
+ * Tablets (large) and small laptops
+ */
+@media (min-width: 1024px) {
+
+    .inset {
+        /* Keep text column at .block-narrow width */
+        padding: 42px;
+    }
+}
+
+/**
+ * Laptops
+ */
+ @media (min-width: 1280px) {
+
+    .inset {
+        padding: 4rem;
+
+        & .text,
+        & .inset-actions {
+            /* Keep text column at .block-narrow width */
+            padding-inline-start: calc(158px - 4rem);
+            padding-inline-end: calc(158px - 4rem);
+        }
+    }
+}
+
+/**
+ * Desktops and large laptops
+ */
+@media (min-width: 1400px) {
+
+    .inset {
+
+        & .text,
+        & .inset-actions {
+            /* Keep text column at .block-narrow width */
+            padding-inline-start: calc(174px - 4rem);
+            padding-inline-end: calc(174px - 4rem);
+        }
+    }
+}
+
+/**
+ * Large Desktops
+ */
+@media (min-width: 1600px) {
+
+    .inset {
+        max-width: 1200px;
+
+        & .text,
+        & .inset-actions {
+            /* Keep text column at .block-narrow width */
+            padding-inline-start: calc(220px - 4rem);
+            padding-inline-end: calc(220px - 4rem);
+        }
+    }
+}
+
+/**
+ * Very Large Desktops
+ */
+@media (min-width: 1920px) {
+
+    .inset {
+
+        & .text,
+        & .inset-actions {
+            /* Keep text column at .block-narrow width */
+            padding-inline-start: calc(167px - 4rem);
+            padding-inline-end: calc(167px - 4rem);
+        }
+    }
+}

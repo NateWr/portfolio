@@ -25,6 +25,8 @@
     --color-drop-shadow: var(--color-black-85);
     --color-svg-icon: #000;
     --color-svg-icon-opacity: 0.85;
+    --color-inset-gradient-start: rgba(255, 236, 208, 1);
+    --color-inset-gradient-end: rgba(255, 236, 208, 0.15);
 
     /**
      * Typography
@@ -36,6 +38,7 @@
     --text-semibold: 600;
     --text-bold: 700;
 
+    --text-xs: 1rem; /* 16 */
     --text-sm: 1.25rem; /* 20 */
     --text: 1.5rem; /* 24 */
     --text-md: 1.625rem; /* 26 */
@@ -53,8 +56,9 @@
      * The rest
      */
     --radius: 2px;
-    --border-dotted: 0.5rem dotted var(--color-yellow);
-
+    --border-dotted: 0.25rem dotted var(--color-yellow);
+    --box-shadow-highlight: -8px -8px 0 var(--color-drop-highlight), 8px 8px 0 var(--color-drop-shadow);
+    --inset-bg: linear-gradient(to top right, var(--color-inset-gradient-start), var(--color-inset-gradient-end));
 }
 
 /**
@@ -68,5 +72,7 @@
         --color-link-highlight: var(--color-focus);
         --color-svg-icon: var(--color-yellow);
         --color-svg-icon-opacity: 1;
+        --color-inset-gradient-start: rgba(255, 112, 103, 0.15);
+        --color-inset-gradient-end: rgba(255, 246, 232, 0.025);
     }
 }

@@ -69,7 +69,7 @@
 @media (min-width: 1600px) {
 
     .block {
-        max-width: 1400px;
+        max-width: 1200px;
     }
 
     .block-narrow {
@@ -81,6 +81,10 @@
  * Very Large Desktops
  */
 @media (min-width: 1920px) {
+
+    .block {
+        max-width: 1400px;
+    }
 
     .block-narrow {
         max-width: 866px;

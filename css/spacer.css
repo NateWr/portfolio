@@ -3,11 +3,18 @@
     margin: 15vh auto;
     width: 0;
     height: 100vh;
-    left: 0.25rem;
+    left: 0.125rem;
     transform: translateX(-50%);
     border-left: var(--border-dotted);
 }
 
+.spacer--small {
+    height: 10rem;
+}
+
+/**
+ * Laptops
+ */
 @media (min-width: 1280px) {
 
     .spacer {

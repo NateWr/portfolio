@@ -1,0 +1,93 @@
+.page-links-wrapper {
+    /** Don't use 100% width unless needed */
+    display: inline-block;
+    margin-bottom: 8rem;
+}
+
+.page-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.75em;
+    padding-top: 1.75em;
+    font-size: 4vw;
+    gap: 0.5em 1em;
+    border-top: var(--border-dotted);
+}
+
+.page-links-item {
+    margin-left: -1em;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    padding: 0.5em 1em;
+    white-space: nowrap;
+
+    & svg {
+        width: 2em;
+        height: auto;
+    }
+}
+
+/**
+ * Weird gap between phones and tablets
+ */
+@media (min-width: 564px) {
+
+    .page-links {
+        font-size: var(--text-sm);
+    }
+
+    .page-link {
+
+        & svg {
+            width: 2em;
+        }
+    }
+}
+
+/**
+ * Tablets (small)
+ */
+@media (min-width: 720px) {
+
+    .page-links {
+        font-size: var(--text);
+    }
+}
+
+/**
+ * Tablets (large) and small desktops
+ */
+@media (min-width: 1024px) {
+
+    .page-links-wrapper {
+        margin-bottom: 12rem;
+    }
+}
+
+/**
+ * Laptops
+ */
+@media (min-width: 1280px) {
+
+    .page-links-wrapper {
+        margin-bottom: 16rem;
+    }
+
+    .page-links {
+        font-size: var(--text-lg);
+    }
+}
+
+/**
+ * Desktops and large laptops
+ */
+@media (min-width: 1400px) {
+
+    .page-links-wrapper {
+        margin-bottom: 20rem;
+    }
+}
