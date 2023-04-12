@@ -13,12 +13,15 @@
     }
 }
 
+.site-footer-details {
+    margin-top: 10vw;
+}
+
 .site-footer-avatar {
     display: none;
 }
 
 .site-footer-links {
-    margin-top: 10vw;
     font-size: 4vw;
     line-height: 1.5em;
 }
@@ -51,8 +54,25 @@
         padding-bottom: 50vw;
     }
 
-    .site-footer-links {
+    .site-footer-details {
+        display: flex;
+        align-items: center;
         margin-top: 2em;
+        gap: 0 3em;
+    }
+
+    .site-footer-avatar {
+        display: block;
+
+        & img {
+            width: 120px;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--box-shadow-highlight);
+        }
+    }
+
+    .site-footer-links {
         font-size: var(--text);
     }
 
