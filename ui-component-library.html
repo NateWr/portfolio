@@ -36,92 +36,125 @@ nextText: "Civic App"
         Summary
     </h2>
     <p class="block text-lg">
-        I have more than a decade of experience building open source
-        tools for the web. I’m comfortable working across the full stack,
-        whether I’m creating a UI component library, refactoring a legacy
-        code base, or building a data-driven app. I’m comfortable working
-        across the full stack, whether I’m creating a UI component library.
+        I designed and built a UI component library for the world's most widely used scholarly publishing software. Built with Vue.js, the library acts as a development tool, a documentation resource, and a collection of accessible components for everything from tabs to step-by-step workflows.
     </p>
     <div class="spacer spacer--small" aria-hidden="true"></div>
     <p class="block-narrow text">
-        I had a previous career in journalism and I’m interested in working
-        on projects at the intersection of information, communication, and
-        social change. I believe <a href="#">technology is a means not a
-        mission</a>. No algorithm can tell us what a better world looks like.
-        But well-built digital products can help watchdogs monitor,
-        campaigners organise, and activists agitate.
+        I wrote almost every component, mixin and utility in the Public Knowledge Project's <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4">UI Library</a>. This library powers the editorial backend of PKP's open-source applications, where editors triage submissions, manage peer review assignments, and publish scholarly articles, books and preprints. Their flagship software, Open Journal Systems, is used by more than <a href="https://pkp.sfu.ca/software/ojs/usage-data/">30,000 journals</a> in 100+ countries and dozens of languages.
     </p>
     <figure class="block figure">
-        {% image "img/ui-library.png", "Screenshot of the UI Library" %}
+        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
         <figcaption>
             {% include 'icon-image.svg' %}
-            Lorem ipsum dolor sit amet and some more stuff that goes on for
-            a while and some more <a href="#">stuff</a> that goes on for a
-            while.
+            A screenshot of a composite component for sending an email. See the <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Composer">&lt;Composer&gt;</a>.
         </figcaption>
     </figure>
     <p class="block-narrow text">
-        I had a previous career in journalism and I’m interested in working
-        on projects at the intersection of information, communication, and
-        social change. I believe <a href="#">technology is a means not a
-        mission</a>. No algorithm can tell us what a better world looks like.
-        But well-built digital products can help watchdogs monitor,
-        campaigners organise, and activists agitate.
+        The component library includes everything from simple buttons and badges to tabs and forms. I adopted third-party components wherever possible, but there weren't many that supported our localization and accessibility requirements off-the-shelf. So I often had to write bespoke components, like keyboard-friendly handles to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Orderer">reorder items</a>. Sometimes, I was able to use a third-party library by writing a small wrapper in order to implement accessible controls, like I did with the <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Modal">modals</a> and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/mixins/dialog">dialogs</a>.
     </p>
+    <figure class="block figure">
+        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            TODO: Video showing keyboard trap in modals?
+        </figcaption>
+    </figure>
     <div class="block inset">
         <h2 class="text-heading">
-            Why didn't we use an existing component library, like Quasar or
-            Vuetify?
+            Why isn't it mobile-friendly?
         </h2>
         <p class="text">
-            I had a previous career in journalism and I’m interested in working
-            on projects at the intersection of information, communication, and
-            social change. I believe <a href="#">technology is a means not a
-            mission</a>. No algorithm can tell us what a better world looks like.
-            But well-built digital products can help watchdogs monitor,
-            campaigners organise, and activists agitate.
+            These applications are used by scholars in professional settings to manage large documents, data entry and workflow procedures, so we don't hear much from users who want to use them on mobile devices. I was sceptical when I joined the team, but after eight years working with the project, I never once received a request from a user who wanted to use the application on anything smaller than a tablet. 🤷
         </p>
-        <p class="text">
-            I believe no algorithm can tell us what a better world looks like.
-            But well-built digital products can help watchdogs monitor,
-            campaigners organise, and activists agitate.
-        </p>
-        <div class="inset-actions">
-            <a href="#" class="button">
-                {% include 'icon-github.svg' %}
-                View Source
-            </a>
-        </div>
     </div>
-    <p class="block-narrow text">
-        I have more than a decade of experience building open source
-        tools for the web. I’m comfortable working across the full stack,
-        whether I’m creating a UI component library, refactoring a legacy
-        code base, or building a data-driven app.
-    </p>
-    <p class="block-narrow text">
-        I had a previous career in journalism and I’m interested in working
-        on projects at the intersection of information, communication, and
-        social change. I believe <a href="#">technology is a means not a
-        mission</a>. No algorithm can tell us what a better world looks like.
-        But well-built digital products can help watchdogs monitor,
-        campaigners organise, and activists agitate.
-    </p>
-    <h2 class="block-narrow text-heading">
-        Lorem ipsum dolor sit amet
+    <h2 class="block-narrow heading text-heading">
+        ListPanels
     </h2>
     <p class="block-narrow text">
-        I have more than a decade of experience building open source
-        tools for the web. I’m comfortable working across the full stack,
-        whether I’m creating a UI component library, refactoring a legacy
-        code base, or building a data-driven app.
+        One of the first components that I built for this library was the <code>&lt;ListPanel&gt;</code> (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/">docs</a>, <a href="https://github.com/pkp/ui-library/blob/c7cb4e12b06dca912b9fbe21831d15feb3ad020d/src/components/ListPanel/ListPanel.vue">source</a>). There are dozens of different data models in the system and each one of them needs a slightly different UI to view and edit them. So I built the <code>&lt;ListPanel&gt;</code> to be an extensible component that would work with a lot of variations.
+    </p>
+    <figure class="block figure">
+        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            TODO: Screenshot showing 4 variations of the list panels
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        I used slots so that my colleagues could easily adapt the lists to serve their needs, while enforcing some constraints that helped them use the component in a consistent way across the app. In it's simplest form, a <code>&lt;ListPanel&gt;</code> only needs to be passed an array of items.
+    </p>
+    <div class="block code">
+        {% capture code %}{% include 'code/list-panel.html' %}{% endcapture %}
+        <pre>{{ code | escape }}</pre>
+    </div>
+    <p class="block-narrow text">
+        A developer can add actions to each item by using the predefined <code>item-actions</code> slot.
+    </p>
+    <div class="block code">
+        {% capture code %}{% include 'code/list-panel-item-actions.html' %}{% endcapture %}
+        <pre>{{ code | escape }}</pre>
+    </div>
+    <p class="block-narrow text">
+        There are several pre-defined slots that allow developers to change the header, add a sidebar, or override the list item completely to implement more complex features like an expandable, accordion-like list item (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/with-expandable-item">example</a>).
+    </p>
+    <div class="block code">
+        {% capture code %}{% include 'code/list-panel-expandable.html' %}{% endcapture %}
+        <pre>{{ code | escape }}</pre>
+    </div>
+    <p class="block-narrow text">
+        Using the <code>&lt;ListPanel&gt;</code> as a base, I was able to build several composite components to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SelectReviewerListPanel">find a peer reviewer</a>, <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionsListPanel">track submissions</a>, and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionFilesListPanel">upload files</a>.
+    </p>
+    <figure class="block figure">
+        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            TODO: Screenshot of review assigment or submissions list
+        </figcaption>
+    </figure>
+    <h2 class="block-narrow heading text-heading">
+        Autosave and Dropped Connections
+    </h2>
+    <p class="block-narrow text">
+        When I worked on a ground-up rebuild of our submission wizard, I implemented an autosave feature to make sure that authors would never lose their progress (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">docs</a>, <a href="https://github.com/pkp/ui-library/blob/997480bb6be6188f052561a299ce81c6eb089fda/src/mixins/autosave.js">source</a>). Once we started saving data on their behalf, we had to figure out how to handle dropped connections gracefully. If an author loses connection when going through a tunnel or working on dodgy wifi, I wanted to make sure the system wouldn't fail them.
     </p>
     <p class="block-narrow text">
-        I had a previous career in journalism and I’m interested in working
-        on projects at the intersection of information, communication, and
-        social change. I believe <a href="#">technology is a means not a
-        mission</a>. No algorithm can tell us what a better world looks like.
-        But well-built digital products can help watchdogs monitor,
-        campaigners organise, and activists agitate.
+        I solved this problem by creating a queue (<a href="https://github.com/pkp/ui-library/blob/997480bb6be6188f052561a299ce81c6eb089fda/src/mixins/autosave.js#L176-L204">source</a>). When a dirty form is detected, the autosave data is sent to the queue and the HTTP requests are processed one by one. As soon as the queue detects a lost connection, the request payload is saved to the browser's local storage and the app begins pinging the server to detect the connection status. Once the connection is restored, it will pull the autosaves out of local storage and process them. Autosaves can be replayed like this even if the user has closed the browser and returned later.
+    </p>
+    <p class="block-narrow text">
+        TODO: INSERT VIDEO SHOWING DISCONNECT / RECONNECT
+    </p>
+    <p class="block-narrow text">
+        In our software, third-party plugins can add new fields, forms and custom components to the submission wizard. To support these use cases, I decoupled the autosave feature from the default forms and abstracted it into a mixin (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">docs</a>) that allows plugins to send a payload to the autosave queue: just a data object, a timestamp, and the URL to send it to. These autosaves can be sent to any API endpoint and the UI treats them the same as autosaves triggered by the core application.
+    </p>
+    <h2 class="block-narrow heading text-heading">
+        Accessible Date Range Picker
+    </h2>
+    <p class="block-narrow text">
+        When we added a UI to view visitor statistics, we needed a way for users to select a date range. I looked into third-party date picker components, but everything in the Vue ecosystem at the time had accessibility problems. We didn't have the time to build a fully-working date picker ourselves, so I opted to implement a lightweight alternative.
+    </p>
+    <figure class="block figure">
+        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            TODO: Screenshot of date range in multiple states
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        The <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/DateRange">result</a> is a simple, keyboard-accessible dropdown that lets users select from a predefined list of date ranges, like the last 90 days or the last 12 months. It also provides a basic text input for users to type in the date range. We found the presets were more intuitive for users and using the text inputs turned out to be faster than a date picker for selecting lengthy reporting periods, like a calendar year.
+    </p>
+    <h2 class="block-narrow heading text-heading">
+        What else you should know
+    </h2>
+    <p class="block-narrow text">
+        I'm a fan of keeping things simple. I'm wary of overengineering a solution when a straightforward approach is easier to understand and maintain. With the <code>&lt;ListPanel&gt;</code>s, I used well-known Vue 2 concepts like slots to help the rest of my team adopt the components without much difficulty. When faced with a difficult decision about date pickers, I found a solution that satisfied our usability requirements without requiring us to write and test a lot of complex keyboard interactions.
+    </p>
+    <p class="block-narrow text">
+        But abstractions have their place. When I needed an elegant solution to handle autosave, I isolated that code into a reusable mixin. The biggest problem that abstractions cause is the extra effort it takes for another developer to read and understand the code. So I made sure to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">document</a> it clearly.
+    </p>
+    <p class="block-narrow text">
+        The library started with a few components and developed gradually as part of a long-term project to <a href="/modernization">refactor</a> an old jQuery UI. By the time I left, it had outgrown itself. The library would benefit from introducing some better abstractions to help manage a large-scale UI: state management, TypeScript, a set of utility classes, and an API abstraction for mocking server interactions in testing and development environments. The library itself, the static Vue app to view and document components, could be abandoned in favor of <a href="https://storybook.js.org/">Storybook</a>. When we began, Storybook didn't work well with Vue's dev tools, so I built the library app as an alternative development and documentation tool.
+    </p>
+    <p class="block-narrow text">
+        But code is never done — especially in an open-source project. As part of a small team, I only worked on the UI Library part time. Most of my time with the <a href="https://pkp.sfu.ca/">Public Knowledge Project</a> went into developing new features, <a href="/modernization">modernizing</a> the PHP backend, and handling the technical <a href="/documentation">documentation</a> for the project. If that work doesn't interest you, take a look at a small <a href="/find-your-representatives">data-driven app</a> I wrote to find my local city councillors.
     </p>
 </article>

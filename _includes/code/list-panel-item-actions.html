@@ -1,0 +1,15 @@
+<list-panel
+  :items="[
+    {
+      id: 1,
+      title: 'Example One'
+    }
+  ]"
+  title="Example"
+>
+  <template v-slot:item-actions="{item}">
+    <button @click="edit(item.id)">
+      Edit
+    </button>
+  </template>
+</list-panel>

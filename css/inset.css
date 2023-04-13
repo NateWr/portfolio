@@ -5,6 +5,14 @@
     border-radius: var(--radius);
     box-shadow: var(--box-shadow-highlight);
     background: var(--inset-bg);
+
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
 }
 
 @media(--large-phones) {

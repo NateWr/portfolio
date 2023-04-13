@@ -1,0 +1,15 @@
+<list-panel
+  :items="items"
+  title="Example"
+>
+  <template v-slot:item-actions="{item}">
+    <expander
+      :isExpanded="expanded.includes(item.id)"
+      :itemName="item.title"
+      @toggle="toggleExpanded(item.id)"
+    />
+  </template>
+  <template v-slot:item-expanded="{item}">
+    <!-- Add expanded details here -->
+  </template>
+</list-panel>
