@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Almond",
+    "number": 1,
+    "councillors": [
+      {
+        "url": "https://democracy.edinburgh.gov.uk/mgUserInfo.aspx?UID=115",
+        "name": "Kevin Lang",
+        "phone": "01315294389",
+        "email": "kevin.lang@edinburgh.gov.uk",
+        "party": "Scottish Liberal Democrats",
+        "photo": "images/kevin-lang.jpg"
+      }
+    ]
+  }
+]

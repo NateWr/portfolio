@@ -3,7 +3,7 @@ layout: layout.html
 title: UI Component Library
 backUrl: "/"
 backText: "Home"
-nextUrl: "/find-your-councillor"
+nextUrl: "/find-your-representatives"
 nextText: "Civic App"
 ---
 <article>
@@ -39,9 +39,6 @@ nextText: "Civic App"
         I designed and built a UI component library for the world's most widely used scholarly publishing software. Built with Vue.js, the library acts as a development tool, a documentation resource, and a collection of accessible components for everything from tabs to step-by-step workflows.
     </p>
     <div class="spacer spacer--small" aria-hidden="true"></div>
-    <p class="block-narrow text">
-        I wrote almost every component, mixin and utility in the Public Knowledge Project's <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4">UI Library</a>. This library powers the editorial backend of PKP's open-source applications, where editors triage submissions, manage peer review assignments, and publish scholarly articles, books and preprints. Their flagship software, Open Journal Systems, is used by more than <a href="https://pkp.sfu.ca/software/ojs/usage-data/">30,000 journals</a> in 100+ countries and dozens of languages.
-    </p>
     <figure class="block figure">
         {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
         <figcaption>
@@ -49,6 +46,9 @@ nextText: "Civic App"
             A screenshot of a composite component for sending an email. See the <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Composer">&lt;Composer&gt;</a>.
         </figcaption>
     </figure>
+    <p class="block-narrow text">
+        I wrote almost every component, mixin and utility in the Public Knowledge Project's <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4">UI Library</a>. This library powers the editorial backend of PKP's open-source applications, where editors triage submissions, manage peer review assignments, and publish scholarly articles, books and preprints. Their flagship software, Open Journal Systems, is used by more than <a href="https://pkp.sfu.ca/software/ojs/usage-data/">30,000 journals</a> in 100+ countries and dozens of languages.
+    </p>
     <p class="block-narrow text">
         The component library includes everything from simple buttons and badges to tabs and forms. I adopted third-party components wherever possible, but there weren't many that supported our localization and accessibility requirements off-the-shelf. So I often had to write bespoke components, like keyboard-friendly handles to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Orderer">reorder items</a>. Sometimes, I was able to use a third-party library by writing a small wrapper in order to implement accessible controls, like I did with the <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Modal">modals</a> and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/mixins/dialog">dialogs</a>.
     </p>
@@ -59,14 +59,6 @@ nextText: "Civic App"
             TODO: Video showing keyboard trap in modals?
         </figcaption>
     </figure>
-    <div class="block inset">
-        <h2 class="text-heading">
-            Why isn't it mobile-friendly?
-        </h2>
-        <p class="text">
-            These applications are used by scholars in professional settings to manage large documents, data entry and workflow procedures, so we don't hear much from users who want to use them on mobile devices. I was sceptical when I joined the team, but after eight years working with the project, I never once received a request from a user who wanted to use the application on anything smaller than a tablet. 🤷
-        </p>
-    </div>
     <h2 class="block-narrow heading text-heading">
         ListPanels
     </h2>
@@ -143,14 +135,28 @@ nextText: "Civic App"
         The <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/DateRange">result</a> is a simple, keyboard-accessible dropdown that lets users select from a predefined list of date ranges, like the last 90 days or the last 12 months. It also provides a basic text input for users to type in the date range. We found the presets were more intuitive for users and using the text inputs turned out to be faster than a date picker for selecting lengthy reporting periods, like a calendar year.
     </p>
     <h2 class="block-narrow heading text-heading">
+        Integration Tests
+    </h2>
+    <p class="block-narrow text">
+        The library itself doesn't have any automated tests. As a small team, we decided that any resources we spent on testing were better put towards the integration tests for our three main applications. I wrote a lot of Cypress specs that covered the use of these components as they are used in our applications. See a <a href="https://github.com/pkp/ojs/commit/9cf7b0672721495af322b6e9138ffdcec9dd7867">sample commit</a> or view all of my commits to the test suites for <a href="https://github.com/pkp/ojs/commits/main/cypress/tests?author=NateWr">OJS</a>, <a href="https://github.com/pkp/omp/commits/main/cypress/tests?author=NateWr">OMP</a>, and <a href="https://github.com/pkp/ops/commits/main/cypress/tests?author=NateWr">OPS</a>.
+    </p>
+    <h2 class="block-narrow heading text-heading">
         What else you should know
     </h2>
     <p class="block-narrow text">
-        I'm a fan of keeping things simple. I'm wary of overengineering a solution when a straightforward approach is easier to understand and maintain. With the <code>&lt;ListPanel&gt;</code>s, I used well-known Vue 2 concepts like slots to help the rest of my team adopt the components without much difficulty. When faced with a difficult decision about date pickers, I found a solution that satisfied our usability requirements without requiring us to write and test a lot of complex keyboard interactions.
+        I'm a fan of keeping things simple. I'm wary of overengineering a solution when a straightforward approach is easier to understand and maintain. With the <code>&lt;ListPanel&gt;</code>s, I used well-known Vue 2 concepts like slots to help the rest of my team adopt the components without much difficulty. When faced with a tough decision about date pickers, I found a solution that satisfied our usability requirements without requiring us to write and test a lot of complex keyboard interactions.
     </p>
     <p class="block-narrow text">
         But abstractions have their place. When I needed an elegant solution to handle autosave, I isolated that code into a reusable mixin. The biggest problem that abstractions cause is the extra effort it takes for another developer to read and understand the code. So I made sure to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">document</a> it clearly.
     </p>
+    <div class="block inset">
+        <h2 class="text-heading">
+            Why isn't it mobile-friendly?
+        </h2>
+        <p class="text">
+            These applications are used by scholars in professional settings to manage large documents, data entry and workflow procedures, so we don't hear much from users who want to use them on mobile devices. I was sceptical when I joined the team, but after eight years working with the project, I never once received a request from a user who wanted to use the application on anything smaller than a tablet. We chose to focus on other priorities. 🤷
+        </p>
+    </div>
     <p class="block-narrow text">
         The library started with a few components and developed gradually as part of a long-term project to <a href="/modernization">refactor</a> an old jQuery UI. By the time I left, it had outgrown itself. The library would benefit from introducing some better abstractions to help manage a large-scale UI: state management, TypeScript, a set of utility classes, and an API abstraction for mocking server interactions in testing and development environments. The library itself, the static Vue app to view and document components, could be abandoned in favor of <a href="https://storybook.js.org/">Storybook</a>. When we began, Storybook didn't work well with Vue's dev tools, so I built the library app as an alternative development and documentation tool.
     </p>

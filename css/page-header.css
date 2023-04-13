@@ -7,13 +7,13 @@
 }
 
 .page-type {
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: var(--text-medium);
     line-height: 1em;
 }
 
 .page-title {
-    font-size: 12vw;
+    font-size: 11vw;
     font-weight: var(--text-bold);
     line-height: 1.15em;
     /* Correct left-align shift in font */

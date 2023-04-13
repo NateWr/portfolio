@@ -1,0 +1,16 @@
+.app {
+  /*
+   * Use default "flow" layout for
+   * top-to-bottom display when the
+   * viewport is taller than it is
+   * wide.
+   */
+}
+
+@media (orientation: landscape) {
+
+  .app {
+    display: grid;
+    grid-template-columns: var(--sidebar-min-width) auto;
+  }
+}
