@@ -1,0 +1,151 @@
+---
+layout: layout.html
+title: Code modernization
+backUrl: "/find-your-representatives"
+backText: "Find your Representatives"
+nextUrl: "/documentation"
+nextText: "Documentation"
+---
+<article>
+    <div class="block page-type">
+        Portfolio
+    </div>
+    <h1 class="block page-title">
+        Code Modernization
+    </h1>
+    <div class="block">
+        <div class="page-links-wrapper">
+            <ul class="page-links unstyled-list">
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="#jquery->vue">
+                        {% include 'icon-square-js.svg' %}
+                        Skip to JS
+                    </a>
+                </li>
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="#php+laravel">
+                        {% include 'icon-square-php.svg' %}
+                        Skip to PHP
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="block text-heading">
+        {% include 'chevron-right.svg' %}
+        Summary
+    </h2>
+    <p class="block text-lg">
+        I helped refactor and modernize critical parts of a PHP/jQuery application. On the frontend, I replaced a bespoke, jQuery-based UI framework with Vue.js. For the PHP backend, I introduced type-hinted facades, PSR-2 code formatting, and a flexible data model.
+    </p>
+    <div class="spacer spacer--small" aria-hidden="true"></div>
+    <figure class="block figure">
+        {% image "img/code-format.png", "Screenshot of the commit that introduced PSR-2 formatting" %}
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            The point of no return. When I introduced PSR-2 code formatting, more than 243,000 lines of code were changed across four repositories.  <a href="https://github.com/pkp/pkp-lib/pull/6699/files">View commit</a>
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        PKP's open source <a href="https://pkp.sfu.ca/software/">software</a> for scholarly publishing is more than 20 years old. With a small dev team and a large codebase, it was difficult to prioritize major refactors. But we knew that modernizing the codebase would be worth it in the long run, by reducing maintenance costs and speeding up future development.
+    </p>
+    <p class="block-narrow text">
+        The biggest challenge we faced was finding ways to isolate parts of the codebase, so that we didn't have to refactor the entire application all at once. In the sections below, I describe the major refactors I conducted across the frontend and backend over a period of 4-5 years.
+    </p>
+    <h2 id="jquery->vue" class="block-narrow text-heading">
+        jQuery → Vue.js
+    </h2>
+    <p class="block-narrow text">
+        The first major refactor that I worked on was the introduction of Vue. At the time, the applications' interactive UI components were implemented as a custom, undocumented framework based on jQuery. When the UI needed to be updated, the component made a request to its handler and received an HTML blob with the updated template.
+    </p>
+    <p class="block-narrow text">
+        This made it challenging to introduce Vue in small pieces. Whenever the old framework deleted a branch of the DOM, any Vue component that was mounted within that branch would be removed, losing the state data and causing memory leaks. In an ideal world, I would have mounted Vue to the root element and isolated the destructive components of the old framework in branches of the DOM — a kind of "dead branch" of the element tree.
+    </p>
+    <div class="block code">
+        {% capture code %}{% include 'code/jquery-inside-vue.html' %}{% endcapture %}
+        <pre>{{ code | escape }}</pre>
+    </div>
+    <p class="block-narrow text">
+        Vue warns you not to do this. When two sources of authority control the DOM, they don't know what the other is up to and the DOM can fall out of sync with Vue's state data.
+    </p>
+    <figure class="block figure">
+        {% image "img/vue-template-warning.png", "Screenshot of the a console warning: Templates should only be responsible for mapping the state to the UI" %}
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            Vue warns you of the dangers of messing with its templates, but every refactor requires breaking a few conventions.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        But it's just a warning. It would be safe to do as long as none of the Vue components try to interact with the dead branch. However, I hadn't yet proven the business case for the migration to Vue and we didn't have the resources to commit to a rewrite of every page of the app. I needed to figure out a way to reverse the structure — instantiate a Vue app inside of a component within the old framework — without causing memory leaks, so that we could introduce Vue one component at a time.
+    </p>
+    <p class="block-narrow text">
+        I solved this by mounting Vue apps through a registry. Whennever a component in the old framework destroys the DOM, it uses the registry to <a href="https://github.com/pkp/pkp-lib/blob/bfe1f50983092385531ed01cfc8a928ce76651c2/js/classes/Handler.js#L553-L567">safely destroy</a> any Vue apps mounted within a "dead branch" of the DOM. This allowed us to move forward with rewrites of critical components, delivering UX improvements to reviewer selection and submission tracking. In this way, we were able to progressively refactor the application without significantly slowing down the pace of feature development.
+    </p>
+    <p class="block-narrow text">
+        I used a number of other techniques to glue components from both frameworks togethers. I added toast-style <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/utilities/Notify">notifications</a> and used a global <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/event-bus">event bus</a> so that they could be triggered by either UI framework. I devised a way to <a href="https://github.com/pkp/ui-library/blob/5dc971197ebefe8a456d51756fd22f850b030adf/src/components/ListPanel/submissions/SubmissionsListItem.vue#L740-L759">open a modal</a> controlled by the old jQuery-based framework from within a Vue component.
+    <p class="block-narrow text">
+        It got pretty ugly at times, but I made steady progress deprecating and removing the old jQuery UI. When I had enough UI components built in Vue, I swapped out the root component of the jQuery framework. Now, instead of having a few Vue components nestled inside of a jQuery UI, the apps are almost entirely powered by Vue.
+    </p>
+    <h2 id="php+laravel" class="block-narrow text-heading">
+        Modern PHP and Laravel
+    </h2>
+    <p class="block-narrow text">
+        PHP has come a long way in the 20 years since I began writing it. Modern PHP has everything important for developer experience: type safety, namespaces and imports, support for inheritance and composition, dependency injection, and shared tools for code formatting. But any application written before PHP 7 wouldn't have access to all of that.
+    </p>
+    <p class="block-narrow text">
+        At PKP, we had more than a quarter of a million lines of code written without these conventions. Modernizing this codebase was daunting, but it was hard to justify maintaining our outdated application architecture when the PHP community had evolved with reliable frameworks like <a href="https://symfony.com/">Symfony</a> and <a href="https://laravel.com/">Laravel</a>, and the adoption of <a href="https://www.php-fig.org/psr/">PSR</a> standards.
+    </p>
+    <p class="block-narrow text">
+        I introduced the PSR-2 code styles and wrote commit hooks to apply the formatting automatically using <a href="https://github.com/PHP-CS-Fixer/PHP-CS-Fixer">PHP-CS-Fixer</a> (see the <a href="https://github.com/pkp/pkp-lib/pull/6699/files">big commit</a>). I also integrated Laravel's <a href="https://laravel.com/docs/10.x/providers">Service Providers</a> so that we could take advantage of automatic dependency injection (<a href="https://github.com/pkp/pkp-lib/blob/bfe1f50983092385531ed01cfc8a928ce76651c2/classes/core/AppServiceProvider.php#L27-L51">source</a>).
+    </p>
+    <p class="block-narrow text">
+        I am most proud of the refactoring I did to introduce stricter type hinting. We had dozens of <abbr title="Data Access Object">DAO</abbr> classes in our application. Each <abbr title="Data Access Object">DAO</abbr> is responsible for reading and writing data for one model. Almost all of this code was loosely typed and, the way it was structured, there was a lot of code duplication, with SQL query fragments written over and over again. Below is what a typical <abbr title="Data Access Object">DAO</abbr> looked like.
+    </p>
+    <div class="block code">
+        {% capture code %}{% include 'code/DAO.php' %}{% endcapture %}
+        <pre>{{ code | escape }}</pre>
+    </div>
+    <p class="block-narrow text">
+        Even the way we used a <abbr title="Data Access Object">DAO</abbr> required us to manually type hint the response.
+    </p>
+    <div class="block code">
+        {% capture code %}{% include 'code/DAORegistry.php' %}{% endcapture %}
+        <pre>{{ code | escape }}</pre>
+    </div>
+    <p class="block-narrow text">
+        Using the DAOs this way was prone to errors. And whenever we needed a <abbr title="Data Access Object">DAO</abbr> to retrieve slightly different data, we had to write a new method with a new SQL query. As a result, our codebase was littered with large <abbr title="Data Access Object">DAO</abbr> classes with a lot of repetitive code.
+    </p>
+    <p class="block-narrow text">
+        We didn't have the resources to refactor all of our DAOs at once, so I introduced a <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-repositories">Repository</a> pattern that was a fully type-hinted wrapper class.
+    </p>
+    <div class="block code">
+        {% capture code %}{% include 'code/Repository.php' %}{% endcapture %}
+        <pre>{{ code | escape }}</pre>
+    </div>
+    <p class="block-narrow text">
+        This provided type hinting without completely deprecating the use of the underlying <abbr title="Data Access Object">DAO</abbr>s. We could start using this new pattern without refactoring everywhere the old pattern was used. But it resulted in more code for us to maintain, and we didn't yet have a clear path to refactor the <abbr title="Data Access Object">DAO</abbr>s themselves. I needed a way to eliminate all of those duplicate query methods that had accumulated in the <abbr title="Data Access Object">DAO</abbr>s.
+    </p>
+    <p class="block-narrow text">
+        To solve this problem, I integrated Laravel's <a href="https://laravel.com/docs/10.x/queries">Query Builder</a> and created a fluent interface for building modular database queries.
+    </p>
+    <div class="block code">
+        {% capture code %}{% include 'code/Collector.php' %}{% endcapture %}
+        <pre>{{ code | escape }}</pre>
+    </div>
+    <p class="block-narrow text">
+        This allowed me to refactor dozens of <abbr title="Data Access Object">DAO</abbr> methods into one <code>Collector</code>, resulting in a fluent, type-hinted interface that supports autocomplete in any code editor.
+    </p>
+    <figure class="block figure">
+        <video controls="true" allowfullscreen="true">
+            <source src="/video/repository.webm" type="video/webm">
+            <source src="/video/repository.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            The fluent, type-hinted collectors helped our developers build queries without learning the database structure of every model. See this <a href="https://github.com/pkp/pkp-lib/blob/fc0d48324ab4e83a5ec98ba6676db733df197520/classes/submission/Collector.php">Collector</a>
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        After merging these changes, I updated the documentation on <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-daos"><abbr title="Data Access Object">DAO</abbr></a>s and <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-repositories">Repositories</a> so that my teammates could learn and use the new patterns. Although it wasn't a formal part of my role, I often worked on <a href="/documentation">documentation and developer relations</a> for our open source software.
+    </p>
+</article>

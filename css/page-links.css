@@ -7,6 +7,7 @@
 .page-links {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     margin-top: 1.75em;
     padding-top: 1.75em;
     font-size: 4vw;
@@ -35,13 +36,6 @@
 
     .page-links {
         font-size: var(--text-sm);
-    }
-
-    .page-link {
-
-        & svg {
-            width: 2em;
-        }
     }
 }
 

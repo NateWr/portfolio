@@ -101,6 +101,7 @@ module.exports = function(config) {
   config.addPlugin(PostCSSPlugin);
   config.addPassthroughCopy("fonts");
   config.addPassthroughCopy("styles.css");
+  config.addPassthroughCopy("video");
   config.addPassthroughCopy("img/*.svg");
   config.addShortcode('image', imageShortcode);
   config.addShortcode('backgroundImage', backgroundShortcode);

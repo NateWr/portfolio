@@ -1,0 +1,28 @@
+<div id="app">
+    <h1>{% raw %}{{ title }}{% endraw %}</h1>
+
+    <!--
+        An empty element into which a jQuery component
+        will render a template, destroying the element
+        and recreating it.
+    -->
+    <div id="jquery-component">
+        <script type="text/javascript">
+            $('#jquery-component').pkpHandler(
+                $.pkp.controllers.ExampleHandler
+            );
+        </script>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /**
+     * Mounting the Vue app
+     */
+    var app = new Vue({
+        el: '#app',
+        data: {
+            title: '👋 Hi there!'
+        }
+    });
+</script>
