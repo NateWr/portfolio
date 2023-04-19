@@ -9,33 +9,51 @@ const filenameFormat = function (id, src, width, format, options) {
   return `${name}-${width}.${format}`;
 };
 
+const viewportImageWidth = 0.9;
+
 const imageShortcode = async (
   src,
   alt,
   className = 'image',
   loading = 'lazy',
-  widths = [
-    416,
-    832,
-    600,
-    760,
-    832,
-    1000,
-    1400
-  ],
-  sizes = [
-    '(min-width: 1920px) 100px',
-    '(min-width: 1280px) 1000px',
-    '(min-width: 834px) 760px',
-    '(min-width: 720px) 600px',
-    '85vw',
-  ],
-  formats = []
 ) => {
   const extension = path.extname(src);
-  const imageMetadata = await Image(src, {
-    widths: [...widths, null],
-    formats: extension === '.png' && !formats.length
+  const viewportImageWidthSize = (viewportImageWidth * 100) + 'vw';
+  const imageMetadata = await Image(src);
+  const imageWidth = imageMetadata['webp'][0].width;
+
+  const allowedWidths = [
+      510,
+      640,
+      760,
+      992,
+      1024,
+      1200,
+      1400
+    ].filter(w => w <= imageWidth);
+
+  const allowedSizes = [
+      '(min-width: 1920px) 1400px',
+      '(min-width: 1600px) 1200px',
+      '(min-width: 1400px) 1024px',
+      '(min-width: 1280px) 992px',
+      '(min-width: 1024px) 760px',
+      '(min-width: 720px) 640px',
+      '(min-width: 564px) 500px',
+      viewportImageWidthSize,
+    ].filter(size => {
+      return size === viewportImageWidthSize
+        || size.split(' ').slice(-1)[0].replace('px', '') <= imageWidth;
+    });
+
+  if (allowedSizes.length === 1) {
+    const maxScreenSize = Math.floor(imageWidth / viewportImageWidth);
+    allowedSizes.push('(min-width: ' + maxScreenSize + 'px) ' + imageWidth + 'w');
+  }
+
+  const newImageMetadata = await Image(src, {
+    widths: [...allowedWidths, null],
+    formats: extension === '.png'
       ? ['webp', 'png']
       : ['webp', 'jpeg'],
     outputDir: '_site/img',
@@ -45,12 +63,12 @@ const imageShortcode = async (
 
   const imageAttributes = {
     alt,
-    sizes,
+    sizes: allowedSizes,
     loading,
     decoding: "async",
   };
 
-  const html = Image.generateHTML(imageMetadata, imageAttributes);
+  const html = Image.generateHTML(newImageMetadata, imageAttributes);
 
   if (className) {
     return html.replace('<picture', `<picture class="${className}"`);
@@ -129,6 +147,13 @@ module.exports = function(config) {
         filenameFormat
       })
     });
+
+    await Image('img/avatar.jpg', {
+      formats: ['webp', 'jpeg'],
+      widths: [120, 240],
+      outputDir: '_site/img',
+      filenameFormat
+    })
 
     await Image('img/site-icon.svg', {
       formats: ['png'],

@@ -85,8 +85,11 @@
                 Get in touch if you think I can help you with something.
             </div>
             <div class="site-footer-details">
-                {% assign widths = "120,240" | split: "," %}
-                {% image "img/avatar.jpg", "My avatar", "site-footer-avatar", "lazy", widths, "120px" %}
+                <picture class="site-footer-avatar">
+                    <source type="image/webp" srcset="/img/avatar-120.webp 120w, /img/avatar-240.webp 2x">
+                    <source type="image/jpeg" srcset="/img/avatar-120.jpeg 120w, /img/avatar-240.jpeg 2x">
+                    <img alt="My avatar" loading="lazy" decoding="async" src="/img/avatar-120.jpeg" width="120" height="120">
+                </picture>
                 <ul class="site-footer-links unstyled-list">
                     <li class="site-footer-link">
                         {% include 'icon-github.svg' %}
