@@ -54,10 +54,12 @@ nextText: "Code Modernization"
     <p class="block-narrow text">
         I found a GeoJSON file that described the city's ward boundaries from Edinburgh's <a href="https://data.edinburghcouncilmaps.info/">open data</a> portal. The ward councillors were available from <a href="https://democracy.edinburgh.gov.uk/mgMemberIndex.aspx?VW=TABLE&PIC=1&FN=WARD">edinburgh.gov.uk</a>, but not in a machine-readable format. I wrote a Cypress script (<a href="https://github.com/NateWr/edinburgh-councillors/blob/main/cypress/e2e/councillors.cy.js">source</a>), which I often use for integration testing, to scrape data from the site. The script visits the government site and collects every councillor's name, phone number, email address, photo, and website into a JSON array.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/councillors.json' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            Snippet from <a href="https://github.com/NateWr/edinburgh-councillors/blob/ddc6c1eea34f74d2114e4146e9f84c763061c40d/public/councillors.json">councillors.json</a>
+        </figcaption>
+        {% code 'json' %}{% include 'code/councillors.json' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         Unfortunately, the photos on the government website were all different sizes and aspect ratios. To fit them into my design, I wrote a quick Node.js script (<a href="https://github.com/NateWr/edinburgh-councillors/blob/main/src/tools/getphotos.js">source</a>) to crop the photos so that they were all square.
     </p>
@@ -81,10 +83,12 @@ nextText: "Code Modernization"
     <p class="block-narrow text">
         Traditional breakpoints, based on device width, weren't a great option. A screen width of 767px might represent a tablet in portrait or a phone in landscape. Rather than use a lot of media queries at set widths, I used <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation">orientation</a> media queries to apply a different layout for viewports in portrait or landscape orientation.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/landscape-orientation.css' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            Example of using orientation media queries
+        </figcaption>
+        {% code 'css' %}{% include 'code/landscape-orientation.css' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         This reduced the amount of CSS I had to write to account for different screen sizes, since the UI scaled pretty well once it used the appropriate layout for each orientation.
     </p>

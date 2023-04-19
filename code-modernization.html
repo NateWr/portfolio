@@ -43,7 +43,7 @@ nextText: "Documentation"
         {% image "img/code-format.png", "Screenshot of the commit that introduced PSR-2 formatting" %}
         <figcaption>
             {% include 'icon-image.svg' %}
-            The point of no return. When I introduced PSR-2 code formatting, more than 243,000 lines of code were changed across four repositories.  <a href="https://github.com/pkp/pkp-lib/pull/6699/files">View commit</a>
+            The point of no return. When I introduced PSR-2 code formatting, more than 243,000 lines of code were changed across four repositories. 😅 <a href="https://github.com/pkp/pkp-lib/pull/6699/files">View commit</a>
         </figcaption>
     </figure>
     <p class="block-narrow text">
@@ -61,10 +61,12 @@ nextText: "Documentation"
     <p class="block-narrow text">
         This made it challenging to introduce Vue in small pieces. Whenever the old framework deleted a branch of the DOM, any Vue component that was mounted within that branch would be removed, losing the state data and causing memory leaks. In an ideal world, I would have mounted Vue to the root element and isolated the destructive components of the old framework in branches of the DOM — a kind of "dead branch" of the element tree.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/jquery-inside-vue.html' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            Example code showing how the old UI framework took over a branch of the DOM.
+        </figcaption>
+        {% code 'html' %}{% include 'code/jquery-inside-vue.html' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         Vue warns you not to do this. When two sources of authority control the DOM, they don't know what the other is up to and the DOM can fall out of sync with Vue's state data.
     </p>
@@ -72,7 +74,7 @@ nextText: "Documentation"
         {% image "img/vue-template-warning.png", "Screenshot of the a console warning: Templates should only be responsible for mapping the state to the UI" %}
         <figcaption>
             {% include 'icon-image.svg' %}
-            Vue warns you of the dangers of messing with its templates, but every refactor requires breaking a few conventions.
+            Vue warns you of the dangers of messing with its templates, but every refactor requires breaking a convention or two.
         </figcaption>
     </figure>
     <p class="block-narrow text">
@@ -101,37 +103,42 @@ nextText: "Documentation"
     <p class="block-narrow text">
         I am most proud of the refactoring I did to introduce stricter type hinting. We had dozens of <abbr title="Data Access Object">DAO</abbr> classes in our application. Each <abbr title="Data Access Object">DAO</abbr> is responsible for reading and writing data for one model. Almost all of this code was loosely typed and, the way it was structured, there was a lot of code duplication, with SQL query fragments written over and over again. Below is what a typical <abbr title="Data Access Object">DAO</abbr> looked like.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/DAO.php' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            Example of one of the old DAOs.
+        </figcaption>
+        {% code 'php' %}{% include 'code/DAO.php' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         Even the way we used a <abbr title="Data Access Object">DAO</abbr> required us to manually type hint the response.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/DAORegistry.php' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        {% code 'php' %}{% include 'code/DAORegistry.php' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         Using the DAOs this way was prone to errors. And whenever we needed a <abbr title="Data Access Object">DAO</abbr> to retrieve slightly different data, we had to write a new method with a new SQL query. As a result, our codebase was littered with large <abbr title="Data Access Object">DAO</abbr> classes with a lot of repetitive code.
     </p>
     <p class="block-narrow text">
         We didn't have the resources to refactor all of our DAOs at once, so I introduced a <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-repositories">Repository</a> pattern that was a fully type-hinted wrapper class.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/Repository.php' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            An example of a type-hinted wrapper for the <code>DAO</code>s.
+        </figcaption>
+        {% code 'php' %}{% include 'code/Repository.php' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         This provided type hinting without completely deprecating the use of the underlying <abbr title="Data Access Object">DAO</abbr>s. We could start using this new pattern without refactoring everywhere the old pattern was used. But it resulted in more code for us to maintain, and we didn't yet have a clear path to refactor the <abbr title="Data Access Object">DAO</abbr>s themselves. I needed a way to eliminate all of those duplicate query methods that had accumulated in the <abbr title="Data Access Object">DAO</abbr>s.
     </p>
     <p class="block-narrow text">
         To solve this problem, I integrated Laravel's <a href="https://laravel.com/docs/10.x/queries">Query Builder</a> and created a fluent interface for building modular database queries.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/Collector.php' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            Example of a fluent interface for getting a collection of objects.
+        </figcaption>
+        {% code 'php' %}{% include 'code/Collector.php' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         This allowed me to refactor dozens of <abbr title="Data Access Object">DAO</abbr> methods into one <code>Collector</code>, resulting in a fluent, type-hinted interface that supports autocomplete in any code editor.
     </p>

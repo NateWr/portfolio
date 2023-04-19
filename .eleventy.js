@@ -1,6 +1,8 @@
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const PostCSSPlugin = require("eleventy-plugin-postcss");
+const Prism = require('prismjs');
+const loadPrismLanguages = require('prismjs/components/');
 
 const filenameFormat = function (id, src, width, format, options) {
   const { name } = path.parse(src);
@@ -105,6 +107,12 @@ module.exports = function(config) {
   config.addPassthroughCopy("img/*.svg");
   config.addShortcode('image', imageShortcode);
   config.addShortcode('backgroundImage', backgroundShortcode);
+  config.addPairedLiquidShortcode('code', function (content, language) {
+    loadPrismLanguages([language]);
+    const output = Prism.highlight(content, Prism.languages[language], language);
+
+    return `<pre class="highlight"><code class="language-${language}">${output}</code></pre>`;
+  });
 
   (async () => {
     [

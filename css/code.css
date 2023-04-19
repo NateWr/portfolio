@@ -1,0 +1,90 @@
+/**
+ * Import the code syntax highlighter styles
+ */
+@import "../node_modules/prismjs/themes/prism-tomorrow.min.css";
+
+.codeblock {
+    background: var(--color-code-bg);
+    border-radius: var(--radius);
+    font-size: var(--text-xs);
+
+    & pre {
+        margin: 0;
+        padding: 1rem;
+
+        &:focus-visible {
+            outline: 2px solid var(--color-focus);
+        }
+    }
+
+    & figcaption {
+        padding: 1rem;
+        background: var(--color-code-header-bg);
+        border-bottom: 2px solid var(--color-code-header-border);
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+        font-size: var(--text-xxs);
+        line-height: 1.25em;
+        font-weight: var(--text-medium);
+    }
+}
+
+@media (--large-phones) {
+
+    .codeblock {
+        font-size: var(--text-sm);
+
+        & figcaption {
+            font-size: var(--text-xs);
+            line-height: 1.5em;
+        }
+    }
+}
+
+@media (--tablets-landscape) {
+
+    .codeblock {
+        & pre {
+            padding: 2rem;
+        }
+    }
+}
+
+@media (--laptops-sm) {
+
+    .codeblock {
+        font-size: var(--text);
+
+        & pre {
+            padding: 2em;
+        }
+
+        & figcaption {
+            padding: 1.5em;
+            font-size: var(--text-sm);
+        }
+    }
+}
+
+@media (--laptops-lg) {
+
+    .codeblock {
+        font-size: var(--text-md);
+
+        & figcaption {
+            font-size: var(--text);
+        }
+    }
+}
+
+@media (--laptops-xl) {
+
+    .codeblock {
+        font-size: var(--text-lg);
+
+        & figcaption {
+            font-size: var(--text-md);
+        }
+    }
+
+}

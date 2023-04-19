@@ -1,4 +1,3 @@
-<?php
 class ReviewAssignmentDAO extends DAO
 {
     public function getByRound($round)

@@ -75,24 +75,30 @@ nextText: "Civic App"
     <p class="block-narrow text">
         I used slots so that my colleagues could easily adapt the lists to serve their needs, while enforcing some constraints that helped them use the component in a consistent way across the app. In it's simplest form, a <code>&lt;ListPanel&gt;</code> only needs to be passed an array of items.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/list-panel.html' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            A basic <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel">&lt;ListPanel&gt;</a>
+        </figcaption>
+        {% code 'html' %}{% include 'code/list-panel.html' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         A developer can add actions to each item by using the predefined <code>item-actions</code> slot.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/list-panel-item-actions.html' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            A &lt;ListPanel&gt; with an edit button for each item. <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/with-item-actions">Example</a>
+        </figcaption>
+        {% code 'html' %}{% include 'code/list-panel-item-actions.html' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
-        There are several pre-defined slots that allow developers to change the header, add a sidebar, or override the list item completely to implement more complex features like an expandable, accordion-like list item (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/with-expandable-item">example</a>).
+        There are several pre-defined slots that allow developers to change the header, add a sidebar, or override the list item completely to implement more complex features like an expandable, accordion-like list item.
     </p>
-    <div class="block code">
-        {% capture code %}{% include 'code/list-panel-expandable.html' %}{% endcapture %}
-        <pre>{{ code | escape }}</pre>
-    </div>
+    <figure class="block codeblock">
+        <figcaption>
+            A &lt;ListPanel&gt; with accordion-like expansion. <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/with-expandable-item">Example</a>
+        </figcaption>
+        {% code 'html' %}{% include 'code/list-panel-expandable.html' %}{% endcode %}</pre>
+    </figure>
     <p class="block-narrow text">
         Using the <code>&lt;ListPanel&gt;</code> as a base, I was able to build several composite components to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SelectReviewerListPanel">find a peer reviewer</a>, <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionsListPanel">track submissions</a>, and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionFilesListPanel">upload files</a>.
     </p>
@@ -149,18 +155,18 @@ nextText: "Civic App"
     <p class="block-narrow text">
         But abstractions have their place. When I needed an elegant solution to handle autosave, I isolated that code into a reusable mixin. The biggest problem that abstractions cause is the extra effort it takes for another developer to read and understand the code. So I made sure to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">document</a> it clearly.
     </p>
-    <div class="block inset">
+    <aside class="block inset">
         <h2 class="text-heading">
             Why isn't it mobile-friendly?
         </h2>
         <p class="text">
             These applications are used by scholars in professional settings to manage large documents, data entry and workflow procedures, so we don't hear much from users who want to use them on mobile devices. I was sceptical when I joined the team, but after eight years working with the project, I never once received a request from a user who wanted to use the application on anything smaller than a tablet. We chose to focus on other priorities. 🤷
         </p>
-    </div>
+    </aside>
     <p class="block-narrow text">
-        The library started with a few components and developed gradually as part of a long-term project to <a href="/modernization">refactor</a> an old jQuery UI. By the time I left, it had outgrown itself. The library would benefit from introducing some better abstractions to help manage a large-scale UI: state management, TypeScript, a set of utility classes, and an API abstraction for mocking server interactions in testing and development environments. The library itself, the static Vue app to view and document components, could be abandoned in favor of <a href="https://storybook.js.org/">Storybook</a>. When we began, Storybook didn't work well with Vue's dev tools, so I built the library app as an alternative development and documentation tool.
+        The library started with a few components and developed gradually as part of a long-term project to <a href="/code-modernization">refactor</a> an old jQuery UI. By the time I left, it had outgrown itself. The library would benefit from introducing some better abstractions to help manage a large-scale UI: state management, TypeScript, utility CSS classes, and an API abstraction for mocking server interactions in testing and development environments. The library itself could be abandoned in favor of <a href="https://storybook.js.org/">Storybook</a>. When we began, Storybook didn't work well with Vue's dev tools, so I built the library app as an alternative development and documentation tool.
     </p>
     <p class="block-narrow text">
-        But code is never done — especially in an open-source project. As part of a small team, I only worked on the UI Library part time. Most of my time with the <a href="https://pkp.sfu.ca/">Public Knowledge Project</a> went into developing new features, <a href="/modernization">modernizing</a> the PHP backend, and handling the technical <a href="/documentation">documentation</a> for the project. If that work doesn't interest you, take a look at a small <a href="/find-your-representatives">data-driven app</a> I wrote to find my local city councillors.
+        But code is never done — especially in an open-source project. As part of a small team, I only worked on the UI Library part time. Much of my time with the <a href="https://pkp.sfu.ca/">Public Knowledge Project</a> went into full-stack work developing new features, <a href="/modernization">modernizing</a> the PHP backend, and handling the technical <a href="/documentation">documentation</a> for the project. If that work doesn't interest you, take a look at a small <a href="/find-your-representatives">data-driven app</a> I wrote to find my local city councillors.
     </p>
 </article>

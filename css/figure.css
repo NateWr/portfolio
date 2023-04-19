@@ -43,3 +43,10 @@
         font-size: var(--text);
     }
 }
+
+@media (--laptops-xl) {
+
+    .figure figcaption {
+        font-size: var(--text-md);
+    }
+}
