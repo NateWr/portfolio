@@ -6,6 +6,7 @@
         height: auto;
         border-radius: var(--radius);
         box-shadow: var(--box-shadow-highlight);
+        background: var(--color-drop-shadow);
     }
 
     & video {
