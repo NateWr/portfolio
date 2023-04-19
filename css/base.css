@@ -69,6 +69,10 @@ pre {
     overflow-x: scroll;
 }
 
+code {
+    font-family: var(--font-family-mono);
+}
+
 .-screenReader {
     position: absolute;
     width: 1px;

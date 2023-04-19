@@ -28,6 +28,7 @@
     --color-svg-icon-opacity: 0.85;
     --color-inset-gradient-start: rgba(255, 236, 208, 1);
     --color-inset-gradient-end: rgba(255, 236, 208, 0.15);
+    --color-code: var(--color-yellow);
     --color-code-bg: var(--color-dark-brown);
     --color-code-header-bg: var(--color-yellow);
     --color-code-header-border: var(--color-yellow);
@@ -36,6 +37,7 @@
      * Typography
      */
     --font-family: 'Work Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
     --text-normal: 400;
     --text-medium: 500;
@@ -72,7 +74,7 @@
     /**
      * The rest
      */
-    --radius: 2px;
+    --radius: 3px;
     --border-dotted: 0.25rem dotted var(--color-yellow);
     --box-shadow-highlight: -8px -8px 0 var(--color-drop-highlight), 8px 8px 0 var(--color-drop-shadow);
     --inset-bg: linear-gradient(to top right, var(--color-inset-gradient-start), var(--color-inset-gradient-end));
