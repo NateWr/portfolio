@@ -1,0 +1,21 @@
+{
+  "title": "Publication",
+  "description": "A published version of a submission.",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "readOnly": true
+    },
+    "title": {
+      "type": "string",
+      "multilingual": true
+    },
+    "path": {
+      "type": "string",
+      "validation": [
+        "max:64",
+        "alphanum"
+      ]
+    }
+  }
+}

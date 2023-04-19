@@ -1,0 +1,111 @@
+---
+layout: layout.html
+title: Documentation and Developer Relations
+backUrl: "/code-modernization"
+backText: "Code Modernization"
+nextUrl: "/"
+nextText: "Home"
+---
+<article>
+    <div class="block page-type">
+        Portfolio
+    </div>
+    <h1 class="block page-title">
+        Documentation and Developer Relations
+    </h1>
+    <div class="block">
+        <div class="page-links-wrapper">
+            <ul class="page-links unstyled-list">
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="https://docs.pkp.sfu.ca/dev/">
+                        {% include 'icon-desktop.svg' %}
+                        View Docs Hub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="block text-heading">
+        {% include 'chevron-right.svg' %}
+        Summary
+    </h2>
+    <p class="block text-lg">
+        I wrote documentation for PKP's open source software, including an orientation to the software architecture, technical references, a contributor's guide and a regular newsletter.
+    </p>
+    <div class="spacer spacer--small" aria-hidden="true"></div>
+    <figure class="block figure">
+        <a href="https://docs.pkp.sfu.ca/dev/">
+            {% image "img/docs-dev-hub.png", "Screenshot of the developer documentation hub" %}
+        </a>
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            The documentation hub includes all of our technical docs for system administrators, contributors and third-party developers.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        When I joined the <a href="https://pkp.sfu.ca/">Public Knowledge Project</a>, I struggled to understand how their software was structured. Most of the code had been written by two or three developers, and they relied heavily on a shared understanding of the codebase. A class reference document was available, but there was no documentation which described the overall architecture or the choices they had made when designing the application.
+    </p>
+    <p class="block-narrow text">
+        As our team grew, I was given a little time to write the documentation that I had wished existed when I started. The result was our main <a href="https://docs.pkp.sfu.ca/dev/documentation/en/">developer documentation</a>, a high-level orientation to the application's architecture. It covered the request lifecycle, routing, authentication and authorization, request handlers, and how we expressed domain concepts as entities and read and wrote them to the data store.
+    </p>
+    <figure class="block figure">
+        <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-request">
+            {% image "img/docs-request-lifecycle.png", "Screenshot of the request lifecycle diagram" %}
+        </a>
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            I made a diagram to help visualise the <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-request">request lifecycle</a>.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        When we introduced a REST API, I adopted <code>json-schema</code> as a simple mechanism to describe our data objects.
+    </p>
+    <figure class="block codeblock">
+        <figcaption>
+            Example entity schema
+        </figcaption>
+        {% code 'php' %}{% include 'code/publication.json' %}{% endcode %}</pre>
+    </figure>
+    <p class="block-narrow text">
+        This allowed us to automate some of the validation and read/write operations in our data access objects. The upside was that the entity schemas could be reused in OpenAPI/Swagger, a machine-readable format commonly used to describe REST APIs. From there, it was pretty easy to generate <a href="https://docs.pkp.sfu.ca/dev/api/ojs/3.4">API documentation</a> using <code>redoc</code>.
+    </p>
+    <figure class="block figure">
+        <a href="https://docs.pkp.sfu.ca/dev/api/ojs/3.4">
+            {% image "img/api-docs.png", "Screenshot of the REST API docs" %}
+        </a>
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            Human-readable <a href="https://docs.pkp.sfu.ca/dev/api/ojs/3.4">documentation</a> for our REST API, with response payloads that are derived directly from the application's entity schemas.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        As our community grew, we had to find better ways to triage issues and review pull requests. I wrote a <a href="https://docs.pkp.sfu.ca/dev/contributors/">contributor's guide</a> which described how to report bugs and propose new features. It also outlined our code style and instructed developers how they should open a pull request.
+    </p>
+    <figure class="block figure">
+        <a href="https://docs.pkp.sfu.ca/dev/contributors/">
+            {% image "img/docs-contributors-guide.png", "Screenshot of PKP's contributor's guide" %}
+        </a>
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            Our <a href="https://docs.pkp.sfu.ca/dev/contributors/">contributor's guide</a> helped new members of our community understand how we worked and — hopefully — made them feel more welcome.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        The part of the contributor's guide that I am most proud of is the section where we describe <a href="https://docs.pkp.sfu.ca/dev/contributors/#what-to-expect-from-a-code-review">what to expect from a code review</a>. At PKP, we worked hard to maintain a welcoming community. This section of the guide was written to convey how important it was for us to minimize <a href="https://en.wikipedia.org/wiki/Law_of_triviality">bike-shedding</a> and other forms of toxic behaviour common in open source tech communities.
+    </p>
+    <figure class="block figure">
+        <a href="https://docs.pkp.sfu.ca/dev/contributors/">
+            {% image "img/code-review-expectations.png", "Screenshot of code review section of contributor's guide" %}
+        </a>
+        <figcaption>
+            {% include 'icon-image.svg' %}
+            The best code reviews are opportunities for learning. No assholes, please.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        Finally, I started and wrote a bimonthly newsletter for developers. The newsletter sought to reach a segment of our community that wasn't active in GitHub issues or our community forum. I shared regular updates on the development team's work, as well as interesting work from the community.
+    </p>
+    <p class="block-narrow text">
+        The documentation that I wrote for PKP will probably prove to be some of the most enduring work from my time with the organisation. The number of third-party developers, and the complexity of their customizations, grew a lot in recent years. And best of all, we found that new developers were able to get up to speed quickly and start contributing on difficult issues shortly after joining the team.
+    </p>
+</article>
