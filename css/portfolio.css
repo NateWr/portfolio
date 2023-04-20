@@ -112,8 +112,6 @@
         position: relative;
         top: auto;
         right: auto;
-        width: 400px;
-        height: auto;
         flex-shrink: 0;
     }
 }
@@ -123,5 +121,9 @@
 
     .portfolio-item-image {
         width: 600px;
+    }
+
+    .portfolio-item-details .text {
+        font-size: var(--text-md);
     }
 }

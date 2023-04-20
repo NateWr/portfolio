@@ -10,38 +10,38 @@ const filenameFormat = function (id, src, width, format, options) {
 };
 
 const viewportImageWidth = 0.9;
+const viewportImageWidthSize = (viewportImageWidth * 100) + 'vw';
 
 const imageShortcode = async (
   src,
   alt,
   className = 'image',
   loading = 'lazy',
+  widths = [
+    510,
+    640,
+    760,
+    992,
+    1024,
+    1200,
+    1400
+  ],
+  sizes = [
+    '(min-width: 1920px) 1400px',
+    '(min-width: 1600px) 1200px',
+    '(min-width: 1400px) 1024px',
+    '(min-width: 1280px) 992px',
+    '(min-width: 1024px) 760px',
+    '(min-width: 720px) 640px',
+    '(min-width: 564px) 500px',
+    viewportImageWidthSize,
+  ]
 ) => {
   const extension = path.extname(src);
-  const viewportImageWidthSize = (viewportImageWidth * 100) + 'vw';
   const imageMetadata = await Image(src);
   const imageWidth = imageMetadata['webp'][0].width;
-
-  const allowedWidths = [
-      510,
-      640,
-      760,
-      992,
-      1024,
-      1200,
-      1400
-    ].filter(w => w <= imageWidth);
-
-  const allowedSizes = [
-      '(min-width: 1920px) 1400px',
-      '(min-width: 1600px) 1200px',
-      '(min-width: 1400px) 1024px',
-      '(min-width: 1280px) 992px',
-      '(min-width: 1024px) 760px',
-      '(min-width: 720px) 640px',
-      '(min-width: 564px) 500px',
-      viewportImageWidthSize,
-    ].filter(size => {
+  const allowedWidths = widths.filter(w => w <= imageWidth);
+  const allowedSizes = sizes.filter(size => {
       return size === viewportImageWidthSize
         || size.split(' ').slice(-1)[0].replace('px', '') <= imageWidth;
     });
