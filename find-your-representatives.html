@@ -41,11 +41,11 @@ nextText: "Code Modernization"
     <div class="spacer spacer--small" aria-hidden="true"></div>
     <figure class="block figure">
         <a href="https://natewr.github.io/edinburgh-councillors/">
-            {% image "img/find-your-representatives.png", "Screenshot of the app" %}
+            {% image "img/councillors-devices.png", "Screenshots of the app on different devices" %}
         </a>
         <figcaption>
             {% include 'icon-image.svg' %}
-            A screenshot of the web app when viewed in landscape orientation.
+            The app layout adjusts to make use of the full screen, whether using a phone, tablet or laptop.
         </figcaption>
     </figure>
     <p class="block-narrow text">
@@ -74,10 +74,10 @@ nextText: "Code Modernization"
         I then built the web app using Vue and Vite. I wanted a UI that would be familiar to someone using a mobile device, so I mimicked the vertical layout of Google maps on my phone. But this layout doesn't work well in landscape orientation — when the viewport is wider than it is tall.
     </p>
     <figure class="block figure">
-        {% image "img/find-your-representatives.png", "Screenshot of the Composer component" %}
+        {% image "img/councillors-landscape-bad.png", "Screenshot in landscape without orientation media query" %}
         <figcaption>
             {% include 'icon-image.svg' %}
-            TODO: Screenshot showing app in landscape orientation without sidebar.
+            Yikes! The map is almost entirely covered on a phone being held sideways.
         </figcaption>
     </figure>
     <p class="block-narrow text">
@@ -93,10 +93,10 @@ nextText: "Code Modernization"
         This reduced the amount of CSS I had to write to account for different screen sizes, since the UI scaled pretty well once it used the appropriate layout for each orientation.
     </p>
     <figure class="block figure">
-        {% image "img/find-your-representatives.png", "Screenshot of the Composer component" %}
+        {% image "img/councillors-landscape-fixed.png", "Screenshot in landscape with orientation media query" %}
         <figcaption>
             {% include 'icon-image.svg' %}
-            TODO: Screenshot showing app in fixed landscape orientation
+            Ah! It's easy to see the map and the councillors now.
         </figcaption>
     </figure>
     <h2 class="block-narrow heading text-heading">
