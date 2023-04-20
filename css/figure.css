@@ -2,7 +2,8 @@
     margin-top: 2em;
     margin-bottom: 2em;
 
-    & img {
+    & img,
+    & video {
         height: auto;
         border-radius: var(--radius);
         box-shadow: var(--box-shadow-highlight);
@@ -11,7 +12,6 @@
 
     & video {
         width: 100%;
-        height: auto;
     }
 
     & figcaption {

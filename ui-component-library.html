@@ -53,10 +53,13 @@ nextText: "Civic App"
         The component library includes everything from simple buttons and badges to tabs and forms. I adopted third-party components wherever possible, but there weren't many that supported our localization and accessibility requirements off-the-shelf. So I often had to write bespoke components, like keyboard-friendly handles to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Orderer">reorder items</a>. Sometimes, I was able to use a third-party library by writing a small wrapper in order to implement accessible controls, like I did with the <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Modal">modals</a> and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/mixins/dialog">dialogs</a>.
     </p>
     <figure class="block figure">
-        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
+        <video controls="true" allowfullscreen="true">
+            <source src="/video/modal-focus-trap.webm" type="video/webm">
+            <source src="/video/modal-focus-trap.mp4" type="video/mp4">
+        </video>
         <figcaption>
-            {% include 'icon-image.svg' %}
-            TODO: Video showing keyboard trap in modals?
+            {% include 'icon-video.svg' %}
+            A focus trap prevents the focus from escaping the modal when using the keyboard or assistive technology. When the modal is closed, the focus is moved back to where it was before the modal opened.
         </figcaption>
     </figure>
     <h2 class="block-narrow heading text-heading">
@@ -66,10 +69,10 @@ nextText: "Civic App"
         One of the first components that I built for this library was the <code>&lt;ListPanel&gt;</code> (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/">docs</a>, <a href="https://github.com/pkp/ui-library/blob/c7cb4e12b06dca912b9fbe21831d15feb3ad020d/src/components/ListPanel/ListPanel.vue">source</a>). There are dozens of different data models in the system and each one of them needs a slightly different UI to view and edit them. So I built the <code>&lt;ListPanel&gt;</code> to be an extensible component that would work with a lot of variations.
     </p>
     <figure class="block figure">
-        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
+        {% image "img/list-panels.png", "Screenshot of the &lt;ListPanel&gt; component" %}
         <figcaption>
             {% include 'icon-image.svg' %}
-            TODO: Screenshot showing 4 variations of the list panels
+            A flexible component to add, edit, search and filter items in a list. View <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/">&lt;ListPanel&gt;</a>
         </figcaption>
     </figure>
     <p class="block-narrow text">
@@ -103,10 +106,10 @@ nextText: "Civic App"
         Using the <code>&lt;ListPanel&gt;</code> as a base, I was able to build several composite components to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SelectReviewerListPanel">find a peer reviewer</a>, <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionsListPanel">track submissions</a>, and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionFilesListPanel">upload files</a>.
     </p>
     <figure class="block figure">
-        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
+        {% image "img/complex-list-panels.png", "Screenshot of composite %lt;ListPanel%gt; components" %}
         <figcaption>
             {% include 'icon-image.svg' %}
-            TODO: Screenshot of review assigment or submissions list
+            The &lt;ListPanel&gt; was used to build composite components to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionsListPanel">track submissions</a> (left) and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SelectReviewerListPanel">select peer reviewers</a> (right).
         </figcaption>
     </figure>
     <h2 class="block-narrow heading text-heading">
@@ -118,9 +121,16 @@ nextText: "Civic App"
     <p class="block-narrow text">
         I solved this problem by creating a queue (<a href="https://github.com/pkp/ui-library/blob/997480bb6be6188f052561a299ce81c6eb089fda/src/mixins/autosave.js#L176-L204">source</a>). When a dirty form is detected, the autosave data is sent to the queue and the HTTP requests are processed one by one. As soon as the queue detects a lost connection, the request payload is saved to the browser's local storage and the app begins pinging the server to detect the connection status. Once the connection is restored, it will pull the autosaves out of local storage and process them. Autosaves can be replayed like this even if the user has closed the browser and returned later.
     </p>
-    <p class="block-narrow text">
-        TODO: INSERT VIDEO SHOWING DISCONNECT / RECONNECT
-    </p>
+    <figure class="block figure">
+        <video controls="true" allowfullscreen="true">
+            <source src="/video/autosave-reconnect.webm" type="video/webm">
+            <source src="/video/autosave-reconnect.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+            {% include 'icon-video.svg' %}
+            Users can keep working if they lose connection and autosaves will resume as soon as the connection is restored.
+        </figcaption>
+    </figure>
     <p class="block-narrow text">
         In our software, third-party plugins can add new fields, forms and custom components to the submission wizard. To support these use cases, I decoupled the autosave feature from the default forms and abstracted it into a mixin (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">docs</a>) that allows plugins to send a payload to the autosave queue: just a data object, a timestamp, and the URL to send it to. These autosaves can be sent to any API endpoint and the UI treats them the same as autosaves triggered by the core application.
     </p>
@@ -131,10 +141,13 @@ nextText: "Civic App"
         When we added a UI to view visitor statistics, we needed a way for users to select a date range. I looked into third-party date picker components, but everything in the Vue ecosystem at the time had accessibility problems. We didn't have the time to build a fully-working date picker ourselves, so I opted to implement a lightweight alternative.
     </p>
     <figure class="block figure">
-        {% image "img/ui-library-composer.png", "Screenshot of the Composer component" %}
+        <video controls="true" allowfullscreen="true">
+            <source src="/video/date-range.webm" type="video/webm">
+            <source src="/video/date-range.mp4" type="video/mp4">
+        </video>
         <figcaption>
-            {% include 'icon-image.svg' %}
-            TODO: Screenshot of date range in multiple states
+            {% include 'icon-video.svg' %}
+            A keyboard-accessible alternative for selecting a date range when ranges frequently span several months or years.
         </figcaption>
     </figure>
     <p class="block-narrow text">
