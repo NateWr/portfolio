@@ -38,7 +38,7 @@ const imageShortcode = async (
   ]
 ) => {
   const extension = path.extname(src);
-  const imageMetadata = await Image(src);
+  const imageMetadata = await Image(src, {dryRun: true});
   const imageWidth = imageMetadata['webp'][0].width;
   const allowedWidths = widths.filter(w => w <= imageWidth);
   const allowedSizes = sizes.filter(size => {
@@ -52,11 +52,11 @@ const imageShortcode = async (
   }
 
   const newImageMetadata = await Image(src, {
-    widths: [...allowedWidths, null],
+    widths: [...allowedWidths],
     formats: extension === '.png'
       ? ['webp', 'png']
       : ['webp', 'jpeg'],
-    outputDir: '_site/img',
+    outputDir: './_site/img',
     urlPath: '/img',
     filenameFormat
   });
