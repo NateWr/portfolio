@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/img/site-icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/img/site-icon-180.png"><!-- 180×180 -->
+        <link rel="manifest" href="/manifest.webmanifest">
+        <link href="/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio | UI Component Library | Nate Wright, Senior Full-stack Developer</title>
+        <meta property="og:title" content="Portfolio | UI Component Library | Nate Wright, Senior Full-stack Developer">
+        
+            <meta name="description" content="How I built a Vue.js component library for the world's most widely used scholarly publishing software.">
+            <meta property="og:description" content="How I built a Vue.js component library for the world's most widely used scholarly publishing software.">
+            <meta property="twitter:description" content="How I built a Vue.js component library for the world's most widely used scholarly publishing software.">
+        
+        
+            
+    <meta property="og:image" content="/img/og-ui-library-1200.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="twitter:image" content="/img/og-ui-library-1200.png">
+    <meta property="twitter:card" content="summary_large_image">
+  
+      <meta property="og:image:alt" content="Screenshot of the Composer component">
+      <meta property="twitter:image:alt" content="Screenshot of the Composer component">
+    
+        
+        <meta property="og:type" content="article">
+    </head>
+    <body class="page">
+        
+    <picture>
+      <source
+        type="image/webp"
+        media="(prefers-color-scheme: dark)"
+        srcset="/img/header-dark-480.webp 480w, /img/header-dark-768.webp 768w, /img/header-dark-1200.webp 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/jpeg"
+        media="(prefers-color-scheme: dark)"
+        srcset="/img/header-dark-480.jpeg 480w, /img/header-dark-768.jpeg 768w, /img/header-dark-1200.jpeg 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/webp"
+        srcset="/img/header-480.webp 480w, /img/header-768.webp 768w, /img/header-1200.webp 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/jpeg"
+        srcset="/img/header-480.jpeg 480w, /img/header-768.jpeg 768w, /img/header-1200.jpeg 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <img
+        alt="Photo of me squinting into the camera"
+        src="/img/header-480.jpeg"
+        class="header-image"
+        loading="eager"
+        width="1200"
+        height="1370"
+      >
+    </picture>
+  
+        
+            <nav class="page-nav-touch" aria-label="Site Navigation">
+                <ul class="unstyled-list">
+                    
+                        <li>
+                            <a href="/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="17" fill="currentColor" viewBox="0 0 42 17">
+  <path d="M.513 7.187a1.624 1.624 0 0 0 0 2.368l7 6.692a1.81 1.81 0 0 0 2.477 0 1.624 1.624 0 0 0 0-2.368L5.976 10.04h34.056c.968 0 1.75-.747 1.75-1.672 0-.926-.782-1.673-1.75-1.673H5.976L9.99 2.858a1.624 1.624 0 0 0 0-2.368 1.81 1.81 0 0 0-2.477 0l-7 6.692v.005Z"/>
+</svg>
+
+                                <span class="-screenReader">
+                                    Home
+                                </span>
+                            </a>
+                        </li>
+                    
+                    <li>
+                        <a href="/">
+                            <svg width="32" height="29" viewBox="0 0 32 29" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M31.9916 14.1957C31.9916 15.1957 31.1582 15.9791 30.2137 15.9791H28.4358L28.4746 24.8799C28.4746 25.0299 28.4635 25.1799 28.4469 25.3299V26.2245C28.4469 27.4523 27.4523 28.4469 26.2245 28.4469H25.3355C25.2744 28.4469 25.2133 28.4469 25.1521 28.4413C25.0744 28.4469 24.9966 28.4469 24.9188 28.4469H23.1131H21.7796C20.5517 28.4469 19.5572 27.4523 19.5572 26.2245V24.891V21.3352C19.5572 20.3517 18.7627 19.5572 17.7793 19.5572H14.2234C13.24 19.5572 12.4455 20.3517 12.4455 21.3352V24.891V26.2245C12.4455 27.4523 11.451 28.4469 10.2231 28.4469H8.88965H7.11727C7.03393 28.4469 6.95059 28.4413 6.86725 28.4358C6.80058 28.4413 6.73391 28.4469 6.66723 28.4469H5.77827C4.55039 28.4469 3.55586 27.4523 3.55586 26.2245V20.0017C3.55586 19.9517 3.55586 19.8961 3.56141 19.8461V15.9791H1.77793C0.777844 15.9791 0 15.2013 0 14.1957C0 13.6956 0.166681 13.2511 0.555603 12.8622L14.8013 0.444482C15.1902 0.0555603 15.6347 0 16.0236 0C16.4125 0 16.857 0.111121 17.1904 0.388922L31.3804 12.8622C31.8249 13.2511 32.0472 13.6956 31.9916 14.1957Z" />
+</svg>
+
+                            <span class="-screenReader">
+                                Home
+                            </span>
+                        </a>
+                    </li>
+                    
+                        <li>
+                            <a href="/find-your-representatives">
+                                <svg width="42" height="17" viewBox="0 0 42 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M41.2695 7.18708C41.9531 7.84057 41.9531 8.90184 41.2695 9.55533L34.2695 16.2471C33.5859 16.9006 32.4758 16.9006 31.7922 16.2471C31.1086 15.5936 31.1086 14.5323 31.7922 13.8788L35.8063 10.0415H1.75019C0.782226 10.0415 0.00019455 9.29393 0.00019455 8.36859C0.00019455 7.44325 0.782226 6.69566 1.75019 6.69566H35.8063L31.7922 2.85836C31.1086 2.20487 31.1086 1.14361 31.7922 0.490117C32.4758 -0.163372 33.5859 -0.163372 34.2695 0.490117L41.2695 7.18185V7.18708Z"/>
+</svg>
+
+                                <span class="-screenReader">
+                                    Civic App
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+            
+                <div class="block page-nav-desktop" aria-hidden="true">
+                    <a class="unlined-link" href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="123" height="17" fill="currentColor" viewBox="0 0 123 17">
+  <path d="M.513 7.187a1.624 1.624 0 0 0 0 2.368l7 6.692a1.81 1.81 0 0 0 2.477 0 1.624 1.624 0 0 0 0-2.368L5.976 10.04h115.037c.968 0 1.75-.747 1.75-1.672 0-.926-.782-1.673-1.75-1.673H5.976L9.99 2.858a1.624 1.624 0 0 0 0-2.368 1.81 1.81 0 0 0-2.477 0l-7 6.692v.005Z"/>
+</svg>
+
+                        Back to home
+                    </a>
+                </div>
+            
+        
+        <main>
+            <article>
+    <div class="block page-type">
+        Portfolio
+    </div>
+    <h1 class="block page-title">
+        UI Component Library
+    </h1>
+    <div class="block">
+        <div class="page-links-wrapper">
+            <ul class="page-links unstyled-list">
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="29" fill="currentColor" viewBox="0 0 32 29">
+  <path d="M3.556 0A3.559 3.559 0 0 0 0 3.556v16a3.559 3.559 0 0 0 3.556 3.555h9.777l-.594 1.778h-3.85c-.983 0-1.778.794-1.778 1.778 0 .983.795 1.777 1.778 1.777H23.11c.983 0 1.778-.794 1.778-1.777 0-.984-.795-1.778-1.778-1.778h-3.85l-.594-1.778h9.777A3.559 3.559 0 0 0 32 19.556v-16A3.559 3.559 0 0 0 28.444 0H3.556Zm24.888 3.556V16H3.556V3.556h24.888Z"/>
+</svg>
+
+                        View Library
+                    </a>
+                </li>
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="https://github.com/pkp/ui-library/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+  <path d="M10.703 25.123c0 .129-.148.232-.335.232-.213.02-.361-.084-.361-.232 0-.13.148-.233.335-.233.194-.019.361.084.361.233Zm-2.006-.29c-.045.128.084.277.277.315.168.065.361 0 .4-.129.039-.129-.084-.277-.277-.335-.168-.045-.355.02-.4.148Zm2.851-.11c-.187.045-.316.167-.296.316.019.129.187.213.38.167.187-.045.316-.167.297-.296-.02-.123-.194-.207-.38-.187ZM15.793 0C6.845 0 0 6.794 0 15.742c0 7.155 4.503 13.277 10.935 15.432.826.149 1.117-.361 1.117-.78 0-.4-.02-2.607-.02-3.962 0 0-4.516.968-5.464-1.922 0 0-.736-1.878-1.794-2.362 0 0-1.477-1.012.103-.993 0 0 1.607.129 2.49 1.664 1.414 2.49 3.781 1.774 4.704 1.349.148-1.032.568-1.749 1.032-2.174-3.606-.4-7.245-.923-7.245-7.13 0-1.774.49-2.664 1.523-3.8-.168-.419-.716-2.148.167-4.38C8.897 6.264 12 8.426 12 8.426a15.158 15.158 0 0 1 4.052-.549c1.374 0 2.76.188 4.051.549 0 0 3.103-2.168 4.452-1.742.884 2.239.335 3.961.168 4.38 1.032 1.143 1.664 2.033 1.664 3.8 0 6.226-3.8 6.723-7.406 7.13.593.51 1.096 1.477 1.096 2.993 0 2.174-.019 4.865-.019 5.394 0 .419.297.929 1.116.78C27.626 29.02 32 22.897 32 15.741 32 6.795 24.742 0 15.794 0ZM6.271 22.252c-.084.064-.065.213.045.335.103.103.252.148.336.065.083-.065.064-.213-.046-.336-.103-.103-.251-.148-.335-.064Zm-.697-.523c-.045.084.02.187.149.252.103.064.232.045.277-.046.045-.083-.02-.187-.148-.251-.13-.039-.233-.02-.278.045Zm2.09 2.297c-.103.084-.064.277.084.4.149.148.336.168.42.064.084-.083.045-.277-.084-.4-.142-.148-.336-.167-.42-.064Zm-.735-.949c-.103.065-.103.233 0 .381.103.149.277.213.361.149.104-.084.104-.252 0-.4-.09-.149-.258-.213-.361-.13Z"/>
+</svg>
+
+                        View Source
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="block text-heading">
+        <svg width="19" height="32" viewBox="0 0 19 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.6137 14.3863C18.5063 15.2788 18.5063 16.7283 17.6137 17.6209L3.90405 31.3306C3.01149 32.2231 1.56198 32.2231 0.669419 31.3306C-0.22314 30.438 -0.22314 28.9885 0.669419 28.0959L12.7654 16L0.676559 3.90405C-0.215999 3.01149 -0.215999 1.56198 0.676559 0.669419C1.56912 -0.22314 3.01863 -0.22314 3.91119 0.669419L17.6209 14.3791L17.6137 14.3863Z" />
+</svg>
+
+        Summary
+    </h2>
+    <p class="block text-lg">
+        I designed and built a UI component library for the world's most widely used scholarly publishing software. Built with Vue.js, the library acts as a development tool, a documentation resource, and a collection of accessible components for everything from tabs to step-by-step workflows.
+    </p>
+    <div class="spacer spacer--small" aria-hidden="true"></div>
+    <figure class="block figure">
+        <picture class="image"><source type="image/webp" srcset="/img/ui-library-composer-510.webp 510w, /img/ui-library-composer-640.webp 640w, /img/ui-library-composer-760.webp 760w, /img/ui-library-composer-992.webp 992w, /img/ui-library-composer-1024.webp 1024w, /img/ui-library-composer-1200.webp 1200w, /img/ui-library-composer-1400.webp 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><source type="image/png" srcset="/img/ui-library-composer-510.png 510w, /img/ui-library-composer-640.png 640w, /img/ui-library-composer-760.png 760w, /img/ui-library-composer-992.png 992w, /img/ui-library-composer-1024.png 1024w, /img/ui-library-composer-1200.png 1200w, /img/ui-library-composer-1400.png 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><img alt="Screenshot of the Composer component" loading="lazy" decoding="async" src="/img/ui-library-composer-510.png" width="1400" height="933"></picture>
+        <figcaption>
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4C0 1.79375 1.79375 0 4 0H28C30.2062 0 32 1.79375 32 4V24C32 26.2062 30.2062 28 28 28H4C1.79375 28 0 26.2062 0 24V4ZM20.2375 10.6562C19.9562 10.2438 19.4938 10 19 10C18.5062 10 18.0375 10.2438 17.7625 10.6562L12.325 18.6313L10.6687 16.5625C10.3812 16.2063 9.95 16 9.5 16C9.05 16 8.6125 16.2063 8.33125 16.5625L4.33125 21.5625C3.96875 22.0125 3.9 22.6312 4.15 23.15C4.4 23.6687 4.925 24 5.5 24H11.5H13.5H26.5C27.0562 24 27.5688 23.6938 27.825 23.2C28.0813 22.7063 28.05 22.1125 27.7375 21.6562L20.2375 10.6562ZM7 10C7.79565 10 8.55871 9.68393 9.12132 9.12132C9.68393 8.55871 10 7.79565 10 7C10 6.20435 9.68393 5.44129 9.12132 4.87868C8.55871 4.31607 7.79565 4 7 4C6.20435 4 5.44129 4.31607 4.87868 4.87868C4.31607 5.44129 4 6.20435 4 7C4 7.79565 4.31607 8.55871 4.87868 9.12132C5.44129 9.68393 6.20435 10 7 10Z"/>
+</svg>
+
+            A screenshot of a composite component for sending an email. See the <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Composer">&lt;Composer&gt;</a>.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        I wrote almost every component, mixin and utility in the Public Knowledge Project's <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4">UI Library</a>. This library powers the editorial backend of PKP's open-source applications, where editors triage submissions, manage peer review assignments, and publish scholarly articles, books and preprints. Their flagship software, Open Journal Systems, is used by more than <a href="https://pkp.sfu.ca/software/ojs/usage-data/">30,000 journals</a> in 100+ countries and dozens of languages.
+    </p>
+    <p class="block-narrow text">
+        The component library includes everything from simple buttons and badges to tabs and forms. I adopted third-party components wherever possible, but there weren't many that supported our localization and accessibility requirements off-the-shelf. So I often had to write bespoke components, like keyboard-friendly handles to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Orderer">reorder items</a>. Sometimes, I was able to use a third-party library by writing a small wrapper in order to implement accessible controls, like I did with the <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/Modal">modals</a> and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/mixins/dialog">dialogs</a>.
+    </p>
+    <figure class="block figure">
+        <video controls="true" allowfullscreen="true">
+            <source src="/video/modal-focus-trap.webm" type="video/webm">
+            <source src="/video/modal-focus-trap.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512"><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/></svg>
+            A focus trap prevents the focus from escaping the modal when using the keyboard or assistive technology. When the modal is closed, the focus is moved back to where it was before the modal opened.
+        </figcaption>
+    </figure>
+    <h2 class="block-narrow heading text-heading">
+        ListPanels
+    </h2>
+    <p class="block-narrow text">
+        One of the first components that I built for this library was the <code>&lt;ListPanel&gt;</code> (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/">docs</a>, <a href="https://github.com/pkp/ui-library/blob/c7cb4e12b06dca912b9fbe21831d15feb3ad020d/src/components/ListPanel/ListPanel.vue">source</a>). There are dozens of different data models in the system and each one of them needs a slightly different UI to view and edit them. So I built the <code>&lt;ListPanel&gt;</code> to be an extensible component that would work with a lot of variations.
+    </p>
+    <figure class="block figure">
+        <picture class="image"><source type="image/webp" srcset="/img/list-panels-510.webp 510w, /img/list-panels-640.webp 640w, /img/list-panels-760.webp 760w, /img/list-panels-992.webp 992w, /img/list-panels-1024.webp 1024w, /img/list-panels-1200.webp 1200w, /img/list-panels-1400.webp 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><source type="image/png" srcset="/img/list-panels-510.png 510w, /img/list-panels-640.png 640w, /img/list-panels-760.png 760w, /img/list-panels-992.png 992w, /img/list-panels-1024.png 1024w, /img/list-panels-1200.png 1200w, /img/list-panels-1400.png 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><img alt="Screenshot of the &amp;lt;ListPanel&amp;gt; component" loading="lazy" decoding="async" src="/img/list-panels-510.png" width="1400" height="1004"></picture>
+        <figcaption>
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4C0 1.79375 1.79375 0 4 0H28C30.2062 0 32 1.79375 32 4V24C32 26.2062 30.2062 28 28 28H4C1.79375 28 0 26.2062 0 24V4ZM20.2375 10.6562C19.9562 10.2438 19.4938 10 19 10C18.5062 10 18.0375 10.2438 17.7625 10.6562L12.325 18.6313L10.6687 16.5625C10.3812 16.2063 9.95 16 9.5 16C9.05 16 8.6125 16.2063 8.33125 16.5625L4.33125 21.5625C3.96875 22.0125 3.9 22.6312 4.15 23.15C4.4 23.6687 4.925 24 5.5 24H11.5H13.5H26.5C27.0562 24 27.5688 23.6938 27.825 23.2C28.0813 22.7063 28.05 22.1125 27.7375 21.6562L20.2375 10.6562ZM7 10C7.79565 10 8.55871 9.68393 9.12132 9.12132C9.68393 8.55871 10 7.79565 10 7C10 6.20435 9.68393 5.44129 9.12132 4.87868C8.55871 4.31607 7.79565 4 7 4C6.20435 4 5.44129 4.31607 4.87868 4.87868C4.31607 5.44129 4 6.20435 4 7C4 7.79565 4.31607 8.55871 4.87868 9.12132C5.44129 9.68393 6.20435 10 7 10Z"/>
+</svg>
+
+            A flexible component to add, edit, search and filter items in a list. View <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/">&lt;ListPanel&gt;</a>
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        I used slots so that my colleagues could easily adapt the lists to serve their needs, while enforcing some constraints that helped them use the component in a consistent way across the app. In it's simplest form, a <code>&lt;ListPanel&gt;</code> only needs to be passed an array of items.
+    </p>
+    <figure class="block codeblock">
+        <figcaption>
+            A basic <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel"><code>&lt;ListPanel&gt;</code></a>
+        </figcaption>
+        <pre class="highlight"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list-panel</span>
+  <span class="token attr-name">:items</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>[
+    {
+      id: 1,
+      title: 'Example One'
+    }
+  ]<span class="token punctuation">"</span></span>
+  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Example<span class="token punctuation">"</span></span>
+<span class="token punctuation">/></span></span></code></pre></pre>
+    </figure>
+    <p class="block-narrow text">
+        A developer can add actions to each item by using the predefined <code>item-actions</code> slot.
+    </p>
+    <figure class="block codeblock">
+        <figcaption>
+            A <code>&lt;ListPanel&gt;</code> with an edit button for each item. <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/with-item-actions">Example</a>
+        </figcaption>
+        <pre class="highlight"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list-panel</span>
+  <span class="token attr-name">:items</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>[
+    {
+      id: 1,
+      title: 'Example One'
+    }
+  ]<span class="token punctuation">"</span></span>
+  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Example<span class="token punctuation">"</span></span>
+<span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name"><span class="token namespace">v-slot:</span>item-actions</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{item}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edit(item.id)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      Edit
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>list-panel</span><span class="token punctuation">></span></span></code></pre></pre>
+    </figure>
+    <p class="block-narrow text">
+        There are several pre-defined slots that allow developers to change the header, add a sidebar, or override the list item completely to implement more complex features like an expandable, accordion-like list item.
+    </p>
+    <figure class="block codeblock">
+        <figcaption>
+            A &lt;ListPanel&gt; with accordion-like expansion. <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/with-expandable-item">Example</a>
+        </figcaption>
+        <pre class="highlight"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list-panel</span>
+  <span class="token attr-name">:items</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>items<span class="token punctuation">"</span></span>
+  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Example<span class="token punctuation">"</span></span>
+<span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name"><span class="token namespace">v-slot:</span>item-actions</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{item}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>expander</span>
+      <span class="token attr-name">:isExpanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>expanded.includes(item.id)<span class="token punctuation">"</span></span>
+      <span class="token attr-name">:itemName</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item.title<span class="token punctuation">"</span></span>
+      <span class="token attr-name">@toggle</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>toggleExpanded(item.id)<span class="token punctuation">"</span></span>
+    <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name"><span class="token namespace">v-slot:</span>item-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{item}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- Add expanded details here --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>list-panel</span><span class="token punctuation">></span></span></code></pre></pre>
+    </figure>
+    <p class="block-narrow text">
+        Using the <code>&lt;ListPanel&gt;</code> as a base, I was able to build several composite components to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SelectReviewerListPanel">find a peer reviewer</a>, <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionsListPanel">track submissions</a>, and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionFilesListPanel">upload files</a>.
+    </p>
+    <figure class="block figure">
+        <picture class="image"><source type="image/webp" srcset="/img/complex-list-panels-510.webp 510w, /img/complex-list-panels-640.webp 640w, /img/complex-list-panels-760.webp 760w, /img/complex-list-panels-992.webp 992w, /img/complex-list-panels-1024.webp 1024w, /img/complex-list-panels-1200.webp 1200w, /img/complex-list-panels-1400.webp 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><source type="image/png" srcset="/img/complex-list-panels-510.png 510w, /img/complex-list-panels-640.png 640w, /img/complex-list-panels-760.png 760w, /img/complex-list-panels-992.png 992w, /img/complex-list-panels-1024.png 1024w, /img/complex-list-panels-1200.png 1200w, /img/complex-list-panels-1400.png 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><img alt="Screenshot of composite %lt;ListPanel%gt; components" loading="lazy" decoding="async" src="/img/complex-list-panels-510.png" width="1400" height="844"></picture>
+        <figcaption>
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4C0 1.79375 1.79375 0 4 0H28C30.2062 0 32 1.79375 32 4V24C32 26.2062 30.2062 28 28 28H4C1.79375 28 0 26.2062 0 24V4ZM20.2375 10.6562C19.9562 10.2438 19.4938 10 19 10C18.5062 10 18.0375 10.2438 17.7625 10.6562L12.325 18.6313L10.6687 16.5625C10.3812 16.2063 9.95 16 9.5 16C9.05 16 8.6125 16.2063 8.33125 16.5625L4.33125 21.5625C3.96875 22.0125 3.9 22.6312 4.15 23.15C4.4 23.6687 4.925 24 5.5 24H11.5H13.5H26.5C27.0562 24 27.5688 23.6938 27.825 23.2C28.0813 22.7063 28.05 22.1125 27.7375 21.6562L20.2375 10.6562ZM7 10C7.79565 10 8.55871 9.68393 9.12132 9.12132C9.68393 8.55871 10 7.79565 10 7C10 6.20435 9.68393 5.44129 9.12132 4.87868C8.55871 4.31607 7.79565 4 7 4C6.20435 4 5.44129 4.31607 4.87868 4.87868C4.31607 5.44129 4 6.20435 4 7C4 7.79565 4.31607 8.55871 4.87868 9.12132C5.44129 9.68393 6.20435 10 7 10Z"/>
+</svg>
+
+            The &lt;ListPanel&gt; was used to build composite components to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SubmissionsListPanel">track submissions</a> (left) and <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/ListPanel/components/SelectReviewerListPanel">select peer reviewers</a> (right).
+        </figcaption>
+    </figure>
+    <h2 class="block-narrow heading text-heading">
+        Autosave and Dropped Connections
+    </h2>
+    <p class="block-narrow text">
+        When I worked on a ground-up rebuild of our submission wizard, I implemented an autosave feature to make sure that authors would never lose their progress (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">docs</a>, <a href="https://github.com/pkp/ui-library/blob/997480bb6be6188f052561a299ce81c6eb089fda/src/mixins/autosave.js">source</a>). Once we started saving data on their behalf, we had to figure out how to handle dropped connections gracefully. If an author loses connection when going through a tunnel or working on dodgy wifi, I wanted to make sure the system wouldn't fail them.
+    </p>
+    <p class="block-narrow text">
+        I solved this problem by creating a queue (<a href="https://github.com/pkp/ui-library/blob/997480bb6be6188f052561a299ce81c6eb089fda/src/mixins/autosave.js#L176-L204">source</a>). When a dirty form is detected, the autosave data is sent to the queue and the HTTP requests are processed one by one. As soon as the queue detects a lost connection, the request payload is saved to the browser's local storage and the app begins pinging the server to detect the connection status. Once the connection is restored, it will pull the autosaves out of local storage and process them. Autosaves can be replayed like this even if the user has closed the browser and returned later.
+    </p>
+    <figure class="block figure">
+        <video controls="true" allowfullscreen="true">
+            <source src="/video/autosave-reconnect.webm" type="video/webm">
+            <source src="/video/autosave-reconnect.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512"><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/></svg>
+            Users can keep working if they lose connection and autosaves will resume as soon as the connection is restored.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        In our software, third-party plugins can add new fields, forms and custom components to the submission wizard. To support these use cases, I decoupled the autosave feature from the default forms and abstracted it into a mixin (<a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">docs</a>) that allows plugins to send a payload to the autosave queue: just a data object, a timestamp, and the URL to send it to. These autosaves can be sent to any API endpoint and the UI treats them the same as autosaves triggered by the core application.
+    </p>
+    <h2 class="block-narrow heading text-heading">
+        Accessible Date Range Picker
+    </h2>
+    <p class="block-narrow text">
+        When we added a UI to view visitor statistics, we needed a way for users to select a date range. I looked into third-party date picker components, but everything in the Vue ecosystem at the time had accessibility problems. We didn't have the time to build a fully-working date picker ourselves, so I opted to implement a lightweight alternative.
+    </p>
+    <figure class="block figure">
+        <video controls="true" allowfullscreen="true">
+            <source src="/video/date-range.webm" type="video/webm">
+            <source src="/video/date-range.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512"><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/></svg>
+            A keyboard-accessible alternative for selecting a date range when ranges frequently span several months or years.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        The <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/component/DateRange">result</a> is a simple, keyboard-accessible dropdown that lets users select from a predefined list of date ranges, like the last 90 days or the last 12 months. It also provides a basic text input for users to type in the date range. We found the presets were more intuitive for users and using the text inputs turned out to be faster than a date picker for selecting lengthy reporting periods, like a calendar year.
+    </p>
+    <h2 class="block-narrow heading text-heading">
+        Integration Tests
+    </h2>
+    <p class="block-narrow text">
+        The library itself doesn't have any automated tests. As a small team, we decided that any resources we spent on testing were better put towards the integration tests for our three main applications. I wrote a lot of Cypress specs that covered the use of these components as they are used in our applications. See a <a href="https://github.com/pkp/ojs/commit/9cf7b0672721495af322b6e9138ffdcec9dd7867">sample commit</a> or view all of my commits to the test suites for <a href="https://github.com/pkp/ojs/commits/main/cypress/tests?author=NateWr">OJS</a>, <a href="https://github.com/pkp/omp/commits/main/cypress/tests?author=NateWr">OMP</a>, and <a href="https://github.com/pkp/ops/commits/main/cypress/tests?author=NateWr">OPS</a>.
+    </p>
+    <h2 class="block-narrow heading text-heading">
+        What else you should know
+    </h2>
+    <p class="block-narrow text">
+        I'm a fan of keeping things simple. I'm wary of overengineering a solution when a straightforward approach is easier to understand and maintain. With the <code>&lt;ListPanel&gt;</code>s, I used well-known Vue 2 concepts like slots to help the rest of my team adopt the components without much difficulty. When faced with a tough decision about date pickers, I found a solution that satisfied our usability requirements without requiring us to write and test a lot of complex keyboard interactions.
+    </p>
+    <p class="block-narrow text">
+        But abstractions have their place. When I needed an elegant solution to handle autosave, I isolated that code into a reusable mixin. The biggest problem that abstractions cause is the extra effort it takes for another developer to read and understand the code. So I made sure to <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/autosave">document</a> it clearly.
+    </p>
+    <aside class="block inset">
+        <h2 class="text-heading">
+            Why isn't it mobile-friendly?
+        </h2>
+        <p class="text">
+            These applications are used by scholars in professional settings to manage large documents, data entry and workflow procedures, so we don't hear much from users who want to use them on mobile devices. I was sceptical when I joined the team, but after eight years working with the project, I never once received a request from a user who wanted to use the application on anything smaller than a tablet. We chose to focus on other priorities. 🤷
+        </p>
+    </aside>
+    <p class="block-narrow text">
+        The library started with a few components and developed gradually as part of a long-term project to <a href="/code-modernization">refactor</a> an old jQuery UI. By the time I left, it had outgrown itself. The library would benefit from introducing some better abstractions to help manage a large-scale UI: state management, TypeScript, utility CSS classes, and an API abstraction for mocking server interactions in testing and development environments. The library itself could be abandoned in favor of <a href="https://storybook.js.org/">Storybook</a>. When we began, Storybook didn't work well with Vue's dev tools, so I built the library app as an alternative development and documentation tool.
+    </p>
+    <p class="block-narrow text">
+        But code is never done — especially in an open-source project. As part of a small team, I only worked on the UI Library part time. Much of my time with the <a href="https://pkp.sfu.ca/">Public Knowledge Project</a> went into full-stack work developing new features, <a href="/code-modernization">modernizing</a> the PHP backend, and handling the technical <a href="/documentation">documentation</a> for the project. If that work doesn't interest you, take a look at a small <a href="/find-your-representatives">data-driven app</a> I wrote to find my local city councillors.
+    </p>
+</article>
+
+            
+                <nav class="block page-nav-footer" aria-label="Go to next/last page">
+                    <ul class="unstyled-list">
+                        
+                            <li>
+                                <a class="unlined-link" href="/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="123" height="17" fill="currentColor" viewBox="0 0 123 17">
+  <path d="M.513 7.187a1.624 1.624 0 0 0 0 2.368l7 6.692a1.81 1.81 0 0 0 2.477 0 1.624 1.624 0 0 0 0-2.368L5.976 10.04h115.037c.968 0 1.75-.747 1.75-1.672 0-.926-.782-1.673-1.75-1.673H5.976L9.99 2.858a1.624 1.624 0 0 0 0-2.368 1.81 1.81 0 0 0-2.477 0l-7 6.692v.005Z"/>
+</svg>
+
+                                    Back: Home
+                                </a>
+                            </li>
+                        
+                        
+                            <li>
+                                <a class="unlined-link" href="/find-your-representatives">
+                                    Next: Civic App
+                                    <svg width="123" height="17" viewBox="0 0 123 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M122.25 7.18708C122.934 7.84057 122.934 8.90184 122.25 9.55533L115.25 16.2471C114.566 16.9006 113.456 16.9006 112.773 16.2471C112.089 15.5936 112.089 14.5323 112.773 13.8788L116.787 10.0415H1.75C0.782031 10.0415 0 9.29393 0 8.36859C0 7.44325 0.782031 6.69566 1.75 6.69566H116.787L112.773 2.85836C112.089 2.20487 112.089 1.14361 112.773 0.490117C113.456 -0.163372 114.566 -0.163372 115.25 0.490117L122.25 7.18185V7.18708Z"/>
+</svg>
+
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            
+        </main>
+        <footer id="contact" class="block-narrow site-footer">
+            <h2 class="text-heading">Contact Me</h2>
+            <div class="text">
+                Get in touch if you think I can help you with something.
+            </div>
+            <div class="site-footer-details">
+                <picture class="site-footer-avatar">
+                    <source type="image/webp" srcset="/img/avatar-120.webp 120w, /img/avatar-240.webp 2x">
+                    <source type="image/jpeg" srcset="/img/avatar-120.jpeg 120w, /img/avatar-240.jpeg 2x">
+                    <img alt="My avatar" loading="lazy" decoding="async" src="/img/avatar-120.jpeg" width="120" height="120">
+                </picture>
+                <ul class="site-footer-links unstyled-list">
+                    <li class="site-footer-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+  <path d="M10.703 25.123c0 .129-.148.232-.335.232-.213.02-.361-.084-.361-.232 0-.13.148-.233.335-.233.194-.019.361.084.361.233Zm-2.006-.29c-.045.128.084.277.277.315.168.065.361 0 .4-.129.039-.129-.084-.277-.277-.335-.168-.045-.355.02-.4.148Zm2.851-.11c-.187.045-.316.167-.296.316.019.129.187.213.38.167.187-.045.316-.167.297-.296-.02-.123-.194-.207-.38-.187ZM15.793 0C6.845 0 0 6.794 0 15.742c0 7.155 4.503 13.277 10.935 15.432.826.149 1.117-.361 1.117-.78 0-.4-.02-2.607-.02-3.962 0 0-4.516.968-5.464-1.922 0 0-.736-1.878-1.794-2.362 0 0-1.477-1.012.103-.993 0 0 1.607.129 2.49 1.664 1.414 2.49 3.781 1.774 4.704 1.349.148-1.032.568-1.749 1.032-2.174-3.606-.4-7.245-.923-7.245-7.13 0-1.774.49-2.664 1.523-3.8-.168-.419-.716-2.148.167-4.38C8.897 6.264 12 8.426 12 8.426a15.158 15.158 0 0 1 4.052-.549c1.374 0 2.76.188 4.051.549 0 0 3.103-2.168 4.452-1.742.884 2.239.335 3.961.168 4.38 1.032 1.143 1.664 2.033 1.664 3.8 0 6.226-3.8 6.723-7.406 7.13.593.51 1.096 1.477 1.096 2.993 0 2.174-.019 4.865-.019 5.394 0 .419.297.929 1.116.78C27.626 29.02 32 22.897 32 15.741 32 6.795 24.742 0 15.794 0ZM6.271 22.252c-.084.064-.065.213.045.335.103.103.252.148.336.065.083-.065.064-.213-.046-.336-.103-.103-.251-.148-.335-.064Zm-.697-.523c-.045.084.02.187.149.252.103.064.232.045.277-.046.045-.083-.02-.187-.148-.251-.13-.039-.233-.02-.278.045Zm2.09 2.297c-.103.084-.064.277.084.4.149.148.336.168.42.064.084-.083.045-.277-.084-.4-.142-.148-.336-.167-.42-.064Zm-.735-.949c-.103.065-.103.233 0 .381.103.149.277.213.361.149.104-.084.104-.252 0-.4-.09-.149-.258-.213-.361-.13Z"/>
+</svg>
+
+                        <a class="unlined-link" href="https://github.com/NateWr">
+                            github.com/NateWr
+                        </a>
+                    </li>
+                    <li class="site-footer-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" fill="currentColor" viewBox="0 0 32 24">
+  <path d="M3 0a3 3 0 0 0-1.8 5.4l13.6 10.2a2.006 2.006 0 0 0 2.4 0L30.8 5.4A3.002 3.002 0 0 0 29 0H3ZM0 7v13c0 2.206 1.794 4 4 4h24c2.206 0 4-1.794 4-4V7L18.4 17.2a3.994 3.994 0 0 1-4.8 0L0 7Z"/>
+</svg>
+
+                        <a class="unlined-link" href="mailto:natew+work@notthisway.com">
+                            natew+work@notthisway.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        
+    <picture>
+      <source
+        type="image/webp"
+        media="(prefers-color-scheme: dark)"
+        srcset="/img/footer-dark-480.webp 480w, /img/footer-dark-768.webp 768w, /img/footer-dark-1200.webp 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/jpeg"
+        media="(prefers-color-scheme: dark)"
+        srcset="/img/footer-dark-480.jpeg 480w, /img/footer-dark-768.jpeg 768w, /img/footer-dark-1200.jpeg 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/webp"
+        srcset="/img/footer-480.webp 480w, /img/footer-768.webp 768w, /img/footer-1200.webp 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/jpeg"
+        srcset="/img/footer-480.jpeg 480w, /img/footer-768.jpeg 768w, /img/footer-1200.jpeg 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <img
+        alt="Photo of my dog Peanut"
+        src="/img/footer-480.jpeg"
+        class="footer-image"
+        loading="lazy"
+        width="1200"
+        height="1370"
+      >
+    </picture>
+  
+    </body>
+</html>

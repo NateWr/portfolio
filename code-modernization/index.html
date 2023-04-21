@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/img/site-icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/img/site-icon-180.png"><!-- 180×180 -->
+        <link rel="manifest" href="/manifest.webmanifest">
+        <link href="/styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio | Code Modernization | Nate Wright, Senior Full-stack Developer</title>
+        <meta property="og:title" content="Portfolio | Code Modernization | Nate Wright, Senior Full-stack Developer">
+        
+            <meta name="description" content="How I helped refactor and modernize a legacy PHP/jQuery application with type hints, automatic code formatting and Vue.js.">
+            <meta property="og:description" content="How I helped refactor and modernize a legacy PHP/jQuery application with type hints, automatic code formatting and Vue.js.">
+            <meta property="twitter:description" content="How I helped refactor and modernize a legacy PHP/jQuery application with type hints, automatic code formatting and Vue.js.">
+        
+        
+            
+    <meta property="og:image" content="/img/og-modernization-1200.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="twitter:image" content="/img/og-modernization-1200.png">
+    <meta property="twitter:card" content="summary_large_image">
+  
+      <meta property="og:image:alt" content="Screenshot of the code formatting commit">
+      <meta property="twitter:image:alt" content="Screenshot of the code formatting commit">
+    
+        
+        <meta property="og:type" content="article">
+    </head>
+    <body class="page">
+        
+    <picture>
+      <source
+        type="image/webp"
+        media="(prefers-color-scheme: dark)"
+        srcset="/img/header-dark-480.webp 480w, /img/header-dark-768.webp 768w, /img/header-dark-1200.webp 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/jpeg"
+        media="(prefers-color-scheme: dark)"
+        srcset="/img/header-dark-480.jpeg 480w, /img/header-dark-768.jpeg 768w, /img/header-dark-1200.jpeg 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/webp"
+        srcset="/img/header-480.webp 480w, /img/header-768.webp 768w, /img/header-1200.webp 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/jpeg"
+        srcset="/img/header-480.jpeg 480w, /img/header-768.jpeg 768w, /img/header-1200.jpeg 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <img
+        alt="Photo of me squinting into the camera"
+        src="/img/header-480.jpeg"
+        class="header-image"
+        loading="eager"
+        width="1200"
+        height="1370"
+      >
+    </picture>
+  
+        
+            <nav class="page-nav-touch" aria-label="Site Navigation">
+                <ul class="unstyled-list">
+                    
+                        <li>
+                            <a href="/find-your-representatives">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="17" fill="currentColor" viewBox="0 0 42 17">
+  <path d="M.513 7.187a1.624 1.624 0 0 0 0 2.368l7 6.692a1.81 1.81 0 0 0 2.477 0 1.624 1.624 0 0 0 0-2.368L5.976 10.04h34.056c.968 0 1.75-.747 1.75-1.672 0-.926-.782-1.673-1.75-1.673H5.976L9.99 2.858a1.624 1.624 0 0 0 0-2.368 1.81 1.81 0 0 0-2.477 0l-7 6.692v.005Z"/>
+</svg>
+
+                                <span class="-screenReader">
+                                    Find your Representatives
+                                </span>
+                            </a>
+                        </li>
+                    
+                    <li>
+                        <a href="/">
+                            <svg width="32" height="29" viewBox="0 0 32 29" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M31.9916 14.1957C31.9916 15.1957 31.1582 15.9791 30.2137 15.9791H28.4358L28.4746 24.8799C28.4746 25.0299 28.4635 25.1799 28.4469 25.3299V26.2245C28.4469 27.4523 27.4523 28.4469 26.2245 28.4469H25.3355C25.2744 28.4469 25.2133 28.4469 25.1521 28.4413C25.0744 28.4469 24.9966 28.4469 24.9188 28.4469H23.1131H21.7796C20.5517 28.4469 19.5572 27.4523 19.5572 26.2245V24.891V21.3352C19.5572 20.3517 18.7627 19.5572 17.7793 19.5572H14.2234C13.24 19.5572 12.4455 20.3517 12.4455 21.3352V24.891V26.2245C12.4455 27.4523 11.451 28.4469 10.2231 28.4469H8.88965H7.11727C7.03393 28.4469 6.95059 28.4413 6.86725 28.4358C6.80058 28.4413 6.73391 28.4469 6.66723 28.4469H5.77827C4.55039 28.4469 3.55586 27.4523 3.55586 26.2245V20.0017C3.55586 19.9517 3.55586 19.8961 3.56141 19.8461V15.9791H1.77793C0.777844 15.9791 0 15.2013 0 14.1957C0 13.6956 0.166681 13.2511 0.555603 12.8622L14.8013 0.444482C15.1902 0.0555603 15.6347 0 16.0236 0C16.4125 0 16.857 0.111121 17.1904 0.388922L31.3804 12.8622C31.8249 13.2511 32.0472 13.6956 31.9916 14.1957Z" />
+</svg>
+
+                            <span class="-screenReader">
+                                Home
+                            </span>
+                        </a>
+                    </li>
+                    
+                        <li>
+                            <a href="/documentation">
+                                <svg width="42" height="17" viewBox="0 0 42 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M41.2695 7.18708C41.9531 7.84057 41.9531 8.90184 41.2695 9.55533L34.2695 16.2471C33.5859 16.9006 32.4758 16.9006 31.7922 16.2471C31.1086 15.5936 31.1086 14.5323 31.7922 13.8788L35.8063 10.0415H1.75019C0.782226 10.0415 0.00019455 9.29393 0.00019455 8.36859C0.00019455 7.44325 0.782226 6.69566 1.75019 6.69566H35.8063L31.7922 2.85836C31.1086 2.20487 31.1086 1.14361 31.7922 0.490117C32.4758 -0.163372 33.5859 -0.163372 34.2695 0.490117L41.2695 7.18185V7.18708Z"/>
+</svg>
+
+                                <span class="-screenReader">
+                                    Documentation
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+            
+                <div class="block page-nav-desktop" aria-hidden="true">
+                    <a class="unlined-link" href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="123" height="17" fill="currentColor" viewBox="0 0 123 17">
+  <path d="M.513 7.187a1.624 1.624 0 0 0 0 2.368l7 6.692a1.81 1.81 0 0 0 2.477 0 1.624 1.624 0 0 0 0-2.368L5.976 10.04h115.037c.968 0 1.75-.747 1.75-1.672 0-.926-.782-1.673-1.75-1.673H5.976L9.99 2.858a1.624 1.624 0 0 0 0-2.368 1.81 1.81 0 0 0-2.477 0l-7 6.692v.005Z"/>
+</svg>
+
+                        Back to home
+                    </a>
+                </div>
+            
+        
+        <main>
+            <article>
+    <div class="block page-type">
+        Portfolio
+    </div>
+    <h1 class="block page-title">
+        Code Modernization
+    </h1>
+    <div class="block">
+        <div class="page-links-wrapper">
+            <ul class="page-links unstyled-list">
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="#jquery->vue">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/></svg>
+                        Skip to JS
+                    </a>
+                </li>
+                <li class="page-links-item">
+                    <a class="page-link unlined-link" href="#php+laravel">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_228_2)"><path d="M3.12041 0.0427246C1.34761 0.0427246 -0.0795898 1.46993 -0.0795898 3.24272V28.8427C-0.0795898 30.6155 1.34761 32.0427 3.12041 32.0427H28.7204C30.4932 32.0427 31.9204 30.6155 31.9204 28.8427V3.24272C31.9204 1.46993 30.4932 0.0427246 28.7204 0.0427246H3.12041ZM16.0001 8.44995C23.9516 8.44995 30.4001 11.8385 30.4001 16.0235C30.4001 20.2085 23.9516 23.5969 16.0001 23.5969C8.04861 23.5969 1.6001 20.2085 1.6001 16.0235C1.6001 11.8385 8.04861 8.44995 16.0001 8.44995ZM16.0001 9.20591C8.29161 9.20591 2.35605 12.455 2.35605 16.0235C2.35605 19.592 8.2871 22.841 16.0001 22.841C23.7086 22.841 29.6441 19.592 29.6441 16.0235C29.6441 12.455 23.7131 9.20591 16.0001 9.20591ZM14.3396 10.6549H15.9821L15.5906 12.6709C17.0081 12.6709 18.3221 12.5675 18.9566 13.1525C19.6226 13.7645 19.3031 14.5474 18.5831 18.2419H16.9181C17.6111 14.6689 17.7416 14.3719 17.4896 14.1019C17.2466 13.8409 16.6931 13.895 15.3566 13.895L14.5106 18.2419H12.8681L14.3396 10.6549ZM7.45459 12.6754H10.6361C11.5901 12.6754 12.2921 12.9229 12.7286 13.4269C13.5656 14.3899 13.2596 16.3115 12.0851 17.3915C11.0231 18.386 9.87557 18.2509 8.02607 18.2509L7.63457 20.2669H5.98311L7.45459 12.6754ZM20.3651 12.6754H23.5466C24.5006 12.6754 25.2026 12.9229 25.6391 13.4269C26.4761 14.3899 26.1701 16.3115 24.9956 17.3915C23.9561 18.3635 22.8806 18.2509 20.9366 18.2509L20.5451 20.2669H18.8891L20.3651 12.6754ZM10.0459 13.8707C9.70179 13.861 9.30855 13.8724 8.88105 13.8724L8.26455 17.0495C9.80805 17.0495 11.0636 17.2385 11.4191 15.416C11.6689 14.12 11.0782 13.8998 10.0459 13.8707ZM22.9557 13.8707C22.6111 13.861 22.2169 13.8724 21.7871 13.8724L21.1706 17.0495C22.6736 17.0495 23.9651 17.2655 24.3251 15.416C24.5748 14.12 23.9893 13.8998 22.9557 13.8707Z"/></g><defs><clipPath id="clip0_228_2"><rect width="32" height="32" /></clipPath></defs></svg>
+                        Skip to PHP
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="block text-heading">
+        <svg width="19" height="32" viewBox="0 0 19 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.6137 14.3863C18.5063 15.2788 18.5063 16.7283 17.6137 17.6209L3.90405 31.3306C3.01149 32.2231 1.56198 32.2231 0.669419 31.3306C-0.22314 30.438 -0.22314 28.9885 0.669419 28.0959L12.7654 16L0.676559 3.90405C-0.215999 3.01149 -0.215999 1.56198 0.676559 0.669419C1.56912 -0.22314 3.01863 -0.22314 3.91119 0.669419L17.6209 14.3791L17.6137 14.3863Z" />
+</svg>
+
+        Summary
+    </h2>
+    <p class="block text-lg">
+        I helped refactor and modernize critical parts of a PHP/jQuery application. On the frontend, I replaced a bespoke, jQuery-based UI framework with Vue.js. For the PHP backend, I introduced type-hinted facades, PSR-2 code formatting, and a flexible data model.
+    </p>
+    <div class="spacer spacer--small" aria-hidden="true"></div>
+    <figure class="block figure">
+        <picture class="image"><source type="image/webp" srcset="/img/code-format-510.webp 510w, /img/code-format-640.webp 640w, /img/code-format-760.webp 760w, /img/code-format-992.webp 992w, /img/code-format-1024.webp 1024w, /img/code-format-1200.webp 1200w, /img/code-format-1400.webp 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><source type="image/png" srcset="/img/code-format-510.png 510w, /img/code-format-640.png 640w, /img/code-format-760.png 760w, /img/code-format-992.png 992w, /img/code-format-1024.png 1024w, /img/code-format-1200.png 1200w, /img/code-format-1400.png 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><img alt="Screenshot of the commit that introduced PSR-2 formatting" loading="lazy" decoding="async" src="/img/code-format-510.png" width="1400" height="933"></picture>
+        <figcaption>
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4C0 1.79375 1.79375 0 4 0H28C30.2062 0 32 1.79375 32 4V24C32 26.2062 30.2062 28 28 28H4C1.79375 28 0 26.2062 0 24V4ZM20.2375 10.6562C19.9562 10.2438 19.4938 10 19 10C18.5062 10 18.0375 10.2438 17.7625 10.6562L12.325 18.6313L10.6687 16.5625C10.3812 16.2063 9.95 16 9.5 16C9.05 16 8.6125 16.2063 8.33125 16.5625L4.33125 21.5625C3.96875 22.0125 3.9 22.6312 4.15 23.15C4.4 23.6687 4.925 24 5.5 24H11.5H13.5H26.5C27.0562 24 27.5688 23.6938 27.825 23.2C28.0813 22.7063 28.05 22.1125 27.7375 21.6562L20.2375 10.6562ZM7 10C7.79565 10 8.55871 9.68393 9.12132 9.12132C9.68393 8.55871 10 7.79565 10 7C10 6.20435 9.68393 5.44129 9.12132 4.87868C8.55871 4.31607 7.79565 4 7 4C6.20435 4 5.44129 4.31607 4.87868 4.87868C4.31607 5.44129 4 6.20435 4 7C4 7.79565 4.31607 8.55871 4.87868 9.12132C5.44129 9.68393 6.20435 10 7 10Z"/>
+</svg>
+
+            The point of no return. When I introduced PSR-2 code formatting, more than 243,000 lines of code were changed across four repositories. 😅 <a href="https://github.com/pkp/pkp-lib/pull/6699/files">View commit</a>
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        PKP's open source <a href="https://pkp.sfu.ca/software/">software</a> for scholarly publishing is more than 20 years old. With a small dev team and a large codebase, it was difficult to prioritize major refactors. But we knew that modernizing the codebase would be worth it in the long run, by reducing maintenance costs and speeding up future development.
+    </p>
+    <p class="block-narrow text">
+        The biggest challenge we faced was finding ways to isolate parts of the codebase, so that we didn't have to refactor the entire application all at once. In the sections below, I describe the major refactors I conducted across the frontend and backend over a period of 4-5 years.
+    </p>
+    <h2 id="jquery->vue" class="block-narrow text-heading">
+        jQuery → Vue.js
+    </h2>
+    <p class="block-narrow text">
+        The first major refactor that I worked on was the introduction of Vue. At the time, the applications' interactive UI components were implemented as a custom, undocumented framework based on jQuery. When the UI needed to be updated, the component made a request to its handler and received an HTML blob with the updated template.
+    </p>
+    <p class="block-narrow text">
+        This made it challenging to introduce Vue in small pieces. Whenever the old framework deleted a branch of the DOM, any Vue component that was mounted within that branch would be removed, losing the state data and causing memory leaks. In an ideal world, I would have mounted Vue to the root element and isolated the destructive components of the old framework in branches of the DOM — a kind of "dead branch" of the element tree.
+    </p>
+    <figure class="block codeblock">
+        <figcaption>
+            Example code showing how the old UI framework took over a branch of the DOM.
+        </figcaption>
+        <pre class="highlight"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>{{ title }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+
+    <span class="token comment">&lt;!--
+        An empty element into which a jQuery component
+        will render a template, destroying the element
+        and recreating it.
+    --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jquery-component<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+            <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#jquery-component'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pkpHandler</span><span class="token punctuation">(</span>
+                $<span class="token punctuation">.</span>pkp<span class="token punctuation">.</span>controllers<span class="token punctuation">.</span>ExampleHandler
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token comment">/**
+     * Mounting the Vue app
+     */</span>
+    <span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'👋 Hi there!'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre></pre>
+    </figure>
+    <p class="block-narrow text">
+        Vue warns you not to do this. When two sources of authority control the DOM, they don't know what the other is up to and the DOM can fall out of sync with Vue's state data.
+    </p>
+    <figure class="block figure">
+        <picture class="image"><source type="image/webp" srcset="/img/vue-template-warning-510.webp 510w, /img/vue-template-warning-640.webp 640w, /img/vue-template-warning-760.webp 760w, /img/vue-template-warning-992.webp 992w, /img/vue-template-warning-1024.webp 1024w, /img/vue-template-warning-1200.webp 1200w, /img/vue-template-warning-1400.webp 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><source type="image/png" srcset="/img/vue-template-warning-510.png 510w, /img/vue-template-warning-640.png 640w, /img/vue-template-warning-760.png 760w, /img/vue-template-warning-992.png 992w, /img/vue-template-warning-1024.png 1024w, /img/vue-template-warning-1200.png 1200w, /img/vue-template-warning-1400.png 1400w" sizes="(min-width: 1920px) 1400px,(min-width: 1600px) 1200px,(min-width: 1400px) 1024px,(min-width: 1280px) 992px,(min-width: 1024px) 760px,(min-width: 720px) 640px,(min-width: 564px) 500px,90vw"><img alt="Screenshot of the console warning: Templates should only be responsible for mapping the state to the UI" loading="lazy" decoding="async" src="/img/vue-template-warning-510.png" width="1400" height="542"></picture>
+        <figcaption>
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4C0 1.79375 1.79375 0 4 0H28C30.2062 0 32 1.79375 32 4V24C32 26.2062 30.2062 28 28 28H4C1.79375 28 0 26.2062 0 24V4ZM20.2375 10.6562C19.9562 10.2438 19.4938 10 19 10C18.5062 10 18.0375 10.2438 17.7625 10.6562L12.325 18.6313L10.6687 16.5625C10.3812 16.2063 9.95 16 9.5 16C9.05 16 8.6125 16.2063 8.33125 16.5625L4.33125 21.5625C3.96875 22.0125 3.9 22.6312 4.15 23.15C4.4 23.6687 4.925 24 5.5 24H11.5H13.5H26.5C27.0562 24 27.5688 23.6938 27.825 23.2C28.0813 22.7063 28.05 22.1125 27.7375 21.6562L20.2375 10.6562ZM7 10C7.79565 10 8.55871 9.68393 9.12132 9.12132C9.68393 8.55871 10 7.79565 10 7C10 6.20435 9.68393 5.44129 9.12132 4.87868C8.55871 4.31607 7.79565 4 7 4C6.20435 4 5.44129 4.31607 4.87868 4.87868C4.31607 5.44129 4 6.20435 4 7C4 7.79565 4.31607 8.55871 4.87868 9.12132C5.44129 9.68393 6.20435 10 7 10Z"/>
+</svg>
+
+            Vue warns you of the dangers of messing with its templates, but every refactor requires breaking a convention or two.
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        But it's just a warning. It would be safe to do as long as none of the Vue components try to interact with the dead branch. However, I hadn't yet proven the business case for the migration to Vue and we didn't have the resources to commit to a rewrite of every page of the app. I needed to figure out a way to reverse the structure — instantiate a Vue app inside of a component within the old framework — without causing memory leaks, so that we could introduce Vue one component at a time.
+    </p>
+    <p class="block-narrow text">
+        I solved this by mounting each new Vue-based component as a separate Vue app and maintaining a central registry of these apps. Whenever a component in the old framework destroys the DOM, it uses the registry to <a href="https://github.com/pkp/pkp-lib/blob/bfe1f50983092385531ed01cfc8a928ce76651c2/js/classes/Handler.js#L553-L567">safely destroy</a> any Vue apps mounted within a "dead branch" of the DOM. Instead of having a single-page app, we had something like a "many-app page".
+    </p>
+    <p class="block-narrow text">
+        This allowed us to move forward with rewrites of critical components, weaving them into the old framework without having to rewrite that framework significantly. In this way, we were able to progressively refactor the application without significantly slowing down the pace of feature development.
+    </p>
+    <p class="block-narrow text">
+        I used a number of other techniques to glue components from both frameworks togethers. I added toast-style <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/utilities/Notify">notifications</a> and used a global <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/event-bus">event bus</a> so that they could be triggered by either UI framework. I devised a way to <a href="https://github.com/pkp/ui-library/blob/5dc971197ebefe8a456d51756fd22f850b030adf/src/components/ListPanel/submissions/SubmissionsListItem.vue#L740-L759">open a modal</a> controlled by the old jQuery-based framework from within a Vue component.
+    <p class="block-narrow text">
+        It got pretty ugly at times, but I made steady progress deprecating and removing the old jQuery UI. When I had enough UI components built in Vue, I swapped out the root component of the jQuery framework. Now, instead of having a few Vue apps mounted inside of a jQuery-based UI, every page in the application is controlled by a single Vue component, opening the way towards modern single-page app concepts like routing.
+    </p>
+    <h2 id="php+laravel" class="block-narrow text-heading">
+        Modern PHP and Laravel
+    </h2>
+    <p class="block-narrow text">
+        PHP has come a long way in the 20 years since I began writing it. Modern PHP has everything important for developer experience: type safety, namespaces and imports, support for inheritance and composition, dependency injection, and shared tools for code formatting. But any application written before PHP 7 wouldn't have access to all of that.
+    </p>
+    <p class="block-narrow text">
+        At PKP, we had more than a quarter of a million lines of code written without these conventions. Modernizing this codebase was daunting, but it was hard to justify maintaining our outdated application architecture when the PHP community had evolved with reliable frameworks like <a href="https://symfony.com/">Symfony</a> and <a href="https://laravel.com/">Laravel</a>, and the adoption of <a href="https://www.php-fig.org/psr/">PSR</a> standards.
+    </p>
+    <p class="block-narrow text">
+        I introduced the PSR-2 code styles and wrote commit hooks to apply the formatting automatically using <a href="https://github.com/PHP-CS-Fixer/PHP-CS-Fixer">PHP-CS-Fixer</a> (see the <a href="https://github.com/pkp/pkp-lib/pull/6699/files">big commit</a>). I also integrated Laravel's <a href="https://laravel.com/docs/10.x/providers">Service Providers</a> so that we could take advantage of automatic dependency injection (<a href="https://github.com/pkp/pkp-lib/blob/bfe1f50983092385531ed01cfc8a928ce76651c2/classes/core/AppServiceProvider.php#L27-L51">source</a>).
+    </p>
+    <p class="block-narrow text">
+        I am most proud of the refactoring I did to introduce stricter type hinting. We had dozens of <abbr title="Data Access Object">DAO</abbr> classes in our application. Each <abbr title="Data Access Object">DAO</abbr> is responsible for reading and writing data for one model. Almost all of this code was loosely typed and, the way it was structured, there was a lot of code duplication, with SQL query fragments written over and over again. Below is what a typical <abbr title="Data Access Object">DAO</abbr> looked like.
+    </p>
+    <figure class="block codeblock">
+        <figcaption>
+            Example of one of the old DAOs.
+        </figcaption>
+        <pre class="highlight"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">ReviewAssignmentDAO</span> <span class="token keyword">extends</span> <span class="token class-name">DAO</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getByRound</span><span class="token punctuation">(</span><span class="token variable">$round</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token function">retrieve</span><span class="token punctuation">(</span>
+            <span class="token string single-quoted-string">'SELECT * FROM ... WHERE round=?'</span><span class="token punctuation">,</span>
+            <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword type-casting">int</span><span class="token punctuation">)</span> <span class="token variable">$round</span><span class="token punctuation">]</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token function">fromRow</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getCompletedByRound</span><span class="token punctuation">(</span><span class="token variable">$round</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token function">retrieve</span><span class="token punctuation">(</span>
+            <span class="token string single-quoted-string">'SELECT * FROM ... WHERE round=? and completed=1'</span><span class="token punctuation">,</span>
+            <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword type-casting">int</span><span class="token punctuation">)</span> <span class="token variable">$round</span><span class="token punctuation">]</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token function">fromRow</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></pre>
+    </figure>
+    <p class="block-narrow text">
+        Even the way we used a <abbr title="Data Access Object">DAO</abbr> required us to manually type hint the response.
+    </p>
+    <figure class="block codeblock">
+        <pre class="highlight"><code class="language-php"><span class="token comment">/** @var $dao ReviewAssignmentDAO */</span>
+<span class="token variable">$dao</span> <span class="token operator">=</span> <span class="token class-name static-context">DAORegistry</span><span class="token operator">::</span><span class="token function">getDAO</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'ReviewAssignmentDAO'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></pre>
+    </figure>
+    <p class="block-narrow text">
+        Using the DAOs this way was prone to errors. And whenever we needed a <abbr title="Data Access Object">DAO</abbr> to retrieve slightly different data, we had to write a new method with a new SQL query. As a result, our codebase was littered with large <abbr title="Data Access Object">DAO</abbr> classes with a lot of repetitive code.
+    </p>
+    <p class="block-narrow text">
+        We didn't have the resources to refactor all of our DAOs at once, so I introduced a <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-repositories">Repository</a> pattern that was a fully type-hinted wrapper class.
+    </p>
+    <figure class="block codeblock">
+        <figcaption>
+            An example of a type-hinted wrapper for the <code>DAO</code>s.
+        </figcaption>
+        <pre class="highlight"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">namespace</span> <span class="token package">PKP<span class="token punctuation">\</span>submission</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">DAO</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">SubmissionRepository</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name type-declaration">DAO</span> <span class="token variable">$dao</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__construct</span><span class="token punctuation">(</span><span class="token class-name type-declaration">DAO</span> <span class="token variable">$dao</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">dao</span> <span class="token operator">=</span> <span class="token variable">$dao</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">get</span><span class="token punctuation">(</span><span class="token keyword type-hint">int</span> <span class="token variable">$id</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name return-type">Submission</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">dao</span><span class="token operator">-></span><span class="token function">getByid</span><span class="token punctuation">(</span><span class="token variable">$id</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></span></code></pre></pre>
+    </figure>
+    <p class="block-narrow text">
+        This provided type hinting without completely deprecating the use of the underlying <abbr title="Data Access Object">DAO</abbr>s. We could start using this new pattern without refactoring everywhere the old pattern was used. But it resulted in more code for us to maintain, and we didn't yet have a clear path to refactor the <abbr title="Data Access Object">DAO</abbr>s themselves. I needed a way to eliminate all of those duplicate query methods that had accumulated in the <abbr title="Data Access Object">DAO</abbr>s.
+    </p>
+    <p class="block-narrow text">
+        To solve this problem, I integrated Laravel's <a href="https://laravel.com/docs/10.x/queries">Query Builder</a> and created a fluent interface for building modular database queries.
+    </p>
+    <figure class="block codeblock">
+        <figcaption>
+            Example of a fluent interface for getting a collection of objects.
+        </figcaption>
+        <pre class="highlight"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">namespace</span> <span class="token package">PKP<span class="token punctuation">\</span>submissions</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Database<span class="token punctuation">\</span>Query<span class="token punctuation">\</span>Builder</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>DB</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">Collector</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token operator">?</span><span class="token keyword type-hint">array</span> <span class="token variable">$assignedTo</span> <span class="token operator">=</span> <span class="token constant">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token operator">?</span><span class="token keyword type-hint">array</span> <span class="token variable">$status</span> <span class="token operator">=</span> <span class="token constant">null</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">filterByAssignedTo</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token keyword type-hint">array</span> <span class="token variable">$assignedTo</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">self</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">assignedTo</span> <span class="token operator">=</span> <span class="token variable">$assignedTo</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">filterByStatus</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token keyword type-hint">array</span> <span class="token variable">$status</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">self</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">status</span> <span class="token operator">=</span> <span class="token variable">$status</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getQueryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name return-type">Builder</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name static-context">DB</span><span class="token operator">::</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+            <span class="token operator">-></span><span class="token function">select</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+            <span class="token operator">-></span><span class="token function">when</span><span class="token punctuation">(</span>
+                <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">status</span> <span class="token operator">!==</span> <span class="token constant">null</span><span class="token punctuation">,</span>
+                <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Builder</span> <span class="token variable">$q</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token variable">$q</span><span class="token operator">-></span><span class="token function">whereIn</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'status'</span><span class="token punctuation">,</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">status</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">)</span>
+            <span class="token operator">-></span><span class="token function">when</span><span class="token punctuation">(</span>
+                <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">assignedTo</span> <span class="token operator">!==</span> <span class="token constant">null</span><span class="token punctuation">,</span>
+                <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Builder</span> <span class="token variable">$q</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token variable">$q</span><span class="token operator">-></span><span class="token function">whereIn</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'assignedTo'</span><span class="token punctuation">,</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">assignedTo</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></span></code></pre></pre>
+    </figure>
+    <p class="block-narrow text">
+        This allowed me to refactor dozens of <abbr title="Data Access Object">DAO</abbr> methods into one <code>Collector</code>, resulting in a fluent, type-hinted interface that supports autocomplete in any code editor.
+    </p>
+    <figure class="block figure">
+        <video controls="true" allowfullscreen="true">
+            <source src="/video/repository.webm" type="video/webm">
+            <source src="/video/repository.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512"><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/></svg>
+            The fluent, type-hinted collectors helped our developers build queries without learning the database structure of every model. See this <a href="https://github.com/pkp/pkp-lib/blob/fc0d48324ab4e83a5ec98ba6676db733df197520/classes/submission/Collector.php">Collector</a>
+        </figcaption>
+    </figure>
+    <p class="block-narrow text">
+        After merging these changes, I updated the documentation on <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-daos"><abbr title="Data Access Object">DAO</abbr></a>s and <a href="https://docs.pkp.sfu.ca/dev/documentation/en/architecture-repositories">Repositories</a> so that my teammates could learn and use the new patterns. Although it wasn't a formal part of my role, I often worked on <a href="/documentation">documentation and developer relations</a> for our open source software.
+    </p>
+</article>
+
+            
+                <nav class="block page-nav-footer" aria-label="Go to next/last page">
+                    <ul class="unstyled-list">
+                        
+                            <li>
+                                <a class="unlined-link" href="/find-your-representatives">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="123" height="17" fill="currentColor" viewBox="0 0 123 17">
+  <path d="M.513 7.187a1.624 1.624 0 0 0 0 2.368l7 6.692a1.81 1.81 0 0 0 2.477 0 1.624 1.624 0 0 0 0-2.368L5.976 10.04h115.037c.968 0 1.75-.747 1.75-1.672 0-.926-.782-1.673-1.75-1.673H5.976L9.99 2.858a1.624 1.624 0 0 0 0-2.368 1.81 1.81 0 0 0-2.477 0l-7 6.692v.005Z"/>
+</svg>
+
+                                    Back: Find your Representatives
+                                </a>
+                            </li>
+                        
+                        
+                            <li>
+                                <a class="unlined-link" href="/documentation">
+                                    Next: Documentation
+                                    <svg width="123" height="17" viewBox="0 0 123 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M122.25 7.18708C122.934 7.84057 122.934 8.90184 122.25 9.55533L115.25 16.2471C114.566 16.9006 113.456 16.9006 112.773 16.2471C112.089 15.5936 112.089 14.5323 112.773 13.8788L116.787 10.0415H1.75C0.782031 10.0415 0 9.29393 0 8.36859C0 7.44325 0.782031 6.69566 1.75 6.69566H116.787L112.773 2.85836C112.089 2.20487 112.089 1.14361 112.773 0.490117C113.456 -0.163372 114.566 -0.163372 115.25 0.490117L122.25 7.18185V7.18708Z"/>
+</svg>
+
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            
+        </main>
+        <footer id="contact" class="block-narrow site-footer">
+            <h2 class="text-heading">Contact Me</h2>
+            <div class="text">
+                Get in touch if you think I can help you with something.
+            </div>
+            <div class="site-footer-details">
+                <picture class="site-footer-avatar">
+                    <source type="image/webp" srcset="/img/avatar-120.webp 120w, /img/avatar-240.webp 2x">
+                    <source type="image/jpeg" srcset="/img/avatar-120.jpeg 120w, /img/avatar-240.jpeg 2x">
+                    <img alt="My avatar" loading="lazy" decoding="async" src="/img/avatar-120.jpeg" width="120" height="120">
+                </picture>
+                <ul class="site-footer-links unstyled-list">
+                    <li class="site-footer-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+  <path d="M10.703 25.123c0 .129-.148.232-.335.232-.213.02-.361-.084-.361-.232 0-.13.148-.233.335-.233.194-.019.361.084.361.233Zm-2.006-.29c-.045.128.084.277.277.315.168.065.361 0 .4-.129.039-.129-.084-.277-.277-.335-.168-.045-.355.02-.4.148Zm2.851-.11c-.187.045-.316.167-.296.316.019.129.187.213.38.167.187-.045.316-.167.297-.296-.02-.123-.194-.207-.38-.187ZM15.793 0C6.845 0 0 6.794 0 15.742c0 7.155 4.503 13.277 10.935 15.432.826.149 1.117-.361 1.117-.78 0-.4-.02-2.607-.02-3.962 0 0-4.516.968-5.464-1.922 0 0-.736-1.878-1.794-2.362 0 0-1.477-1.012.103-.993 0 0 1.607.129 2.49 1.664 1.414 2.49 3.781 1.774 4.704 1.349.148-1.032.568-1.749 1.032-2.174-3.606-.4-7.245-.923-7.245-7.13 0-1.774.49-2.664 1.523-3.8-.168-.419-.716-2.148.167-4.38C8.897 6.264 12 8.426 12 8.426a15.158 15.158 0 0 1 4.052-.549c1.374 0 2.76.188 4.051.549 0 0 3.103-2.168 4.452-1.742.884 2.239.335 3.961.168 4.38 1.032 1.143 1.664 2.033 1.664 3.8 0 6.226-3.8 6.723-7.406 7.13.593.51 1.096 1.477 1.096 2.993 0 2.174-.019 4.865-.019 5.394 0 .419.297.929 1.116.78C27.626 29.02 32 22.897 32 15.741 32 6.795 24.742 0 15.794 0ZM6.271 22.252c-.084.064-.065.213.045.335.103.103.252.148.336.065.083-.065.064-.213-.046-.336-.103-.103-.251-.148-.335-.064Zm-.697-.523c-.045.084.02.187.149.252.103.064.232.045.277-.046.045-.083-.02-.187-.148-.251-.13-.039-.233-.02-.278.045Zm2.09 2.297c-.103.084-.064.277.084.4.149.148.336.168.42.064.084-.083.045-.277-.084-.4-.142-.148-.336-.167-.42-.064Zm-.735-.949c-.103.065-.103.233 0 .381.103.149.277.213.361.149.104-.084.104-.252 0-.4-.09-.149-.258-.213-.361-.13Z"/>
+</svg>
+
+                        <a class="unlined-link" href="https://github.com/NateWr">
+                            github.com/NateWr
+                        </a>
+                    </li>
+                    <li class="site-footer-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" fill="currentColor" viewBox="0 0 32 24">
+  <path d="M3 0a3 3 0 0 0-1.8 5.4l13.6 10.2a2.006 2.006 0 0 0 2.4 0L30.8 5.4A3.002 3.002 0 0 0 29 0H3ZM0 7v13c0 2.206 1.794 4 4 4h24c2.206 0 4-1.794 4-4V7L18.4 17.2a3.994 3.994 0 0 1-4.8 0L0 7Z"/>
+</svg>
+
+                        <a class="unlined-link" href="mailto:natew+work@notthisway.com">
+                            natew+work@notthisway.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        
+    <picture>
+      <source
+        type="image/webp"
+        media="(prefers-color-scheme: dark)"
+        srcset="/img/footer-dark-480.webp 480w, /img/footer-dark-768.webp 768w, /img/footer-dark-1200.webp 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/jpeg"
+        media="(prefers-color-scheme: dark)"
+        srcset="/img/footer-dark-480.jpeg 480w, /img/footer-dark-768.jpeg 768w, /img/footer-dark-1200.jpeg 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/webp"
+        srcset="/img/footer-480.webp 480w, /img/footer-768.webp 768w, /img/footer-1200.webp 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <source
+        type="image/jpeg"
+        srcset="/img/footer-480.jpeg 480w, /img/footer-768.jpeg 768w, /img/footer-1200.jpeg 1200w"
+        sizes="(min-width:1920px) 1200px,(min-width:1280px) 55vw,(min-width: 720px) 65vw,100vw"
+      >
+      <img
+        alt="Photo of my dog Peanut"
+        src="/img/footer-480.jpeg"
+        class="footer-image"
+        loading="lazy"
+        width="1200"
+        height="1370"
+      >
+    </picture>
+  
+    </body>
+</html>
