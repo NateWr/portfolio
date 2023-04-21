@@ -1,7 +1,7 @@
 /**
  * Import the code syntax highlighter styles
  */
-@import "../node_modules/prismjs/themes/prism-tomorrow.min.css";
+@import "../../node_modules/prismjs/themes/prism-tomorrow.min.css";
 
 .codeblock {
     background: var(--color-code-bg);
