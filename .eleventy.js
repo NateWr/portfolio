@@ -77,6 +77,46 @@ const imageShortcode = async (
   return html;
 };
 
+const openGraphImageShortcode = async (src, alt = '') => {
+  const width = 1200;
+  const height = 630;
+  const extension = path.extname(src);
+  const imageMetadata = await Image(src, {dryRun: true});
+
+  if (imageMetadata['webp'][0].width < width || imageMetadata['webp'][0].height < height) {
+    throw new Error(`The image ${src} can not be used for an open graph tag. It must be at least 1200x630.`);
+  }
+
+  const format = extension === '.png'
+      ? 'png'
+      : 'jpeg'
+
+  const newImageMetadata = await Image(src, {
+    widths: ['1200'],
+    formats: [format],
+    outputDir: './_site/img',
+    urlPath: '/img',
+    filenameFormat
+  });
+
+  let tags = `
+    <meta property="og:image" content="${newImageMetadata[format][0].url}">
+    <meta property="og:image:width" content="${width}">
+    <meta property="og:image:height" content="${height}">
+    <meta property="twitter:image" content="${newImageMetadata[format][0].url}">
+    <meta property="twitter:card" content="summary_large_image">
+  `;
+
+  if (alt) {
+    tags += `
+      <meta property="og:image:alt" content="${alt}">
+      <meta property="twitter:image:alt" content="${alt}">
+    `;
+  }
+
+  return tags;
+};
+
 const backgroundShortcode = async (src, className, alt, loading) => {
   return `
     <picture>
@@ -112,7 +152,7 @@ const backgroundShortcode = async (src, className, alt, loading) => {
       >
     </picture>
   `;
-}
+};
 
 module.exports = function(config) {
   config.setServerOptions({
@@ -123,8 +163,10 @@ module.exports = function(config) {
   config.addPassthroughCopy("styles.css");
   config.addPassthroughCopy("video");
   config.addPassthroughCopy("img/*.svg");
+  config.addPassthroughCopy("manifest.webmanifest");
   config.addShortcode('image', imageShortcode);
   config.addShortcode('backgroundImage', backgroundShortcode);
+  config.addShortcode('openGraphImage', openGraphImageShortcode);
   config.addPairedLiquidShortcode('code', function (content, language) {
     loadPrismLanguages([language]);
     const output = Prism.highlight(content, Prism.languages[language], language);

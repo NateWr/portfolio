@@ -1,6 +1,9 @@
 ---
 layout: layout.html
-title: Code modernization
+title: Portfolio | Code Modernization | Nate Wright, Senior Full-stack Developer
+description: How I helped refactor and modernize a legacy PHP/jQuery application with type hints, automatic code formatting and Vue.js.
+image: img/og-modernization.png
+imageAlt: Screenshot of the code formatting commit
 backUrl: "/find-your-representatives"
 backText: "Find your Representatives"
 nextUrl: "/documentation"
@@ -81,12 +84,15 @@ nextText: "Documentation"
         But it's just a warning. It would be safe to do as long as none of the Vue components try to interact with the dead branch. However, I hadn't yet proven the business case for the migration to Vue and we didn't have the resources to commit to a rewrite of every page of the app. I needed to figure out a way to reverse the structure — instantiate a Vue app inside of a component within the old framework — without causing memory leaks, so that we could introduce Vue one component at a time.
     </p>
     <p class="block-narrow text">
-        I solved this by mounting Vue apps through a registry. Whennever a component in the old framework destroys the DOM, it uses the registry to <a href="https://github.com/pkp/pkp-lib/blob/bfe1f50983092385531ed01cfc8a928ce76651c2/js/classes/Handler.js#L553-L567">safely destroy</a> any Vue apps mounted within a "dead branch" of the DOM. This allowed us to move forward with rewrites of critical components, delivering UX improvements to reviewer selection and submission tracking. In this way, we were able to progressively refactor the application without significantly slowing down the pace of feature development.
+        I solved this by mounting each new Vue-based component as a separate Vue app and maintaining a central registry of these apps. Whenever a component in the old framework destroys the DOM, it uses the registry to <a href="https://github.com/pkp/pkp-lib/blob/bfe1f50983092385531ed01cfc8a928ce76651c2/js/classes/Handler.js#L553-L567">safely destroy</a> any Vue apps mounted within a "dead branch" of the DOM. Instead of having a single-page app, we had something like a "many-app page".
+    </p>
+    <p class="block-narrow text">
+        This allowed us to move forward with rewrites of critical components, weaving them into the old framework without having to rewrite that framework significantly. In this way, we were able to progressively refactor the application without significantly slowing down the pace of feature development.
     </p>
     <p class="block-narrow text">
         I used a number of other techniques to glue components from both frameworks togethers. I added toast-style <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/utilities/Notify">notifications</a> and used a global <a href="https://docs.pkp.sfu.ca/dev/ui-library/3.4/#/pages/event-bus">event bus</a> so that they could be triggered by either UI framework. I devised a way to <a href="https://github.com/pkp/ui-library/blob/5dc971197ebefe8a456d51756fd22f850b030adf/src/components/ListPanel/submissions/SubmissionsListItem.vue#L740-L759">open a modal</a> controlled by the old jQuery-based framework from within a Vue component.
     <p class="block-narrow text">
-        It got pretty ugly at times, but I made steady progress deprecating and removing the old jQuery UI. When I had enough UI components built in Vue, I swapped out the root component of the jQuery framework. Now, instead of having a few Vue components nestled inside of a jQuery UI, the apps are almost entirely powered by Vue.
+        It got pretty ugly at times, but I made steady progress deprecating and removing the old jQuery UI. When I had enough UI components built in Vue, I swapped out the root component of the jQuery framework. Now, instead of having a few Vue apps mounted inside of a jQuery-based UI, every page in the application is controlled by a single Vue component, opening the way towards modern single-page app concepts like routing.
     </p>
     <h2 id="php+laravel" class="block-narrow text-heading">
         Modern PHP and Laravel

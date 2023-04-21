@@ -2,12 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <link rel="icon" href="/img/site-icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/img/site-icon-180.png"><!-- 180×180 -->
+        <link rel="manifest" href="/manifest.webmanifest">
         <link href="/styles.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ title }}</title>
+        <meta property="og:title" content="{{ title }}">
         {% if description %}
             <meta name="description" content="{{ description }}">
+            <meta property="og:description" content="{{ description }}">
+            <meta property="twitter:description" content="{{ description }}">
         {% endif %}
+        {% if image %}
+            {% openGraphImage image imageAlt %}
+        {% endif %}
+        <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
     </head>
     <body class="{% if page.url == '/' %}home{% else %}page{% endif %}">
         {% backgroundImage "/img/header" "header-image" "Photo of me squinting into the camera" "eager" %}
@@ -79,7 +89,7 @@
                 </nav>
             {% endif %}
         </main>
-        <footer class="block-narrow site-footer">
+        <footer id="contact" class="block-narrow site-footer">
             <h2 class="text-heading">Contact Me</h2>
             <div class="text">
                 Get in touch if you think I can help you with something.
