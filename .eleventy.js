@@ -100,10 +100,10 @@ const openGraphImageShortcode = async (src, alt = '') => {
   });
 
   let tags = `
-    <meta property="og:image" content="${newImageMetadata[format][0].url}">
+    <meta property="og:image" content="https://notthisway.com${newImageMetadata[format][0].url}">
     <meta property="og:image:width" content="${width}">
     <meta property="og:image:height" content="${height}">
-    <meta property="twitter:image" content="${newImageMetadata[format][0].url}">
+    <meta property="twitter:image" content="https://notthisway.com${newImageMetadata[format][0].url}">
     <meta property="twitter:card" content="summary_large_image">
   `;
 
